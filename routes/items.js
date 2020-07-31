@@ -39,7 +39,6 @@ router.post(
       }
 
       item = new Item({
-        _id,
         item_name,
         price,
         number,
