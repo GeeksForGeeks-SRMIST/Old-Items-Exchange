@@ -1,10 +1,13 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const fileUpload = require('express-fileupload');
+const bodyParser = require('body-parser');
 const app = express();
 
 // Connect Database
 connectDB();
+
+app.use(bodyParser.json());
 
 // Init Middleware
 app.use(express.json({ extended: false }));
@@ -13,6 +16,7 @@ app.use(fileUpload());
 // Define Routes
 app.use('/api/users', require('./routes/users'));
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/insert',require('./routes/insert'));
 
 app.post('/upload',(req,res)=>{
     if(req,files=== null){
