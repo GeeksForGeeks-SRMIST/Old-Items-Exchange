@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./form.css";
+import { header } from "express-validator";
 
 const FormEntry = () => {
   const [product, updateProduct] = useState("");
@@ -30,18 +31,27 @@ const FormEntry = () => {
     e.preventDefault();
     updatePrice(e.target.value);
   };
-
+  const token = localStorage.getItem("token");
   const postdetail = async (e) => {
     e.preventDefault();
     await axios
-      .post("/api/item", {
-        item_name: product,
-        price,
-        number,
-        address,
-        location,
-        image: "xyz",
-      })
+      .post(
+        "/api/item",
+        {
+          item_name: product,
+          price,
+          number,
+          address,
+          location,
+          image: "xyz",
+        },
+        {
+          header: {
+            "x-auth-token":
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWYyMTJiZmFmODZhNTMzN2U4YzhhODRiIn0sImlhdCI6MTU5NjI4NDY2NCwiZXhwIjoxNTk5ODg0NjY0fQ.-wY24Cz70dkTwPXpP5-zn6dz7VXFNkaA-qNls6WJinU",
+          },
+        }
+      )
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };
