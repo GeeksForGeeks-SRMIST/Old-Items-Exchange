@@ -1,0 +1,54 @@
+.background {
+  height: 700px;
+  background-image: url("https://cdn.pixabay.com/photo/2015/10/05/17/16/kitchen-972934_1280.jpg ");
+}
+.nav-link {
+  font-size: 25px;
+  padding-bottom: 45px;
+
+  color: rgb(90, 89, 89);
+}
+p {
+  color: rgb(233, 72, 72);
+}
+@media (max-width: 480px) {
+  .nav {
+    width: 100vw;
+  }
+  .background {
+    width: 150vw;
+    height: 150vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: none;
+    background-position: center center;
+    background-image: url("https://cdn.pixabay.com/photo/2015/10/05/17/16/kitchen-972934_1280.jpg");
+  }
+}
+@media (min-width: 1025px) {
+  .nav {
+    width: 100vw;
+  }
+  .background {
+    width: 100vw;
+    height: 100vh;
+    background-repeat: none;
+    background-position: center center;
+    background-size: cover;
+    background-image: url("https://cdn.pixabay.com/photo/2015/10/05/17/16/kitchen-972934_1280.jpg");
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .nav {
+    width: 100vw;
+  }
+  .background {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: none;
+    background-position: center center;
+    background-image: url("https://cdn.pixabay.com/photo/2015/10/05/17/16/kitchen-972934_1280.jpg");
+  }
+}

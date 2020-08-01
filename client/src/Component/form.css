@@ -1,0 +1,28 @@
+.background-form {
+  background-color: #bbe1fa;
+  height: 100vh;
+  width: 100vw;
+}
+
+.nav-link-active {
+  font-size: 35px;
+}
+@media (max-width: 480px) {
+  .background-form {
+    width: 150vw;
+    height: 150vh;
+  }
+}
+@media (min-width: 1025px) {
+  .background-form {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .background-form {
+    width: 100vw;
+    height: 100vh;
+  }
+}

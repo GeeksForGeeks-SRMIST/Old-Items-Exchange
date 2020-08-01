@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+       <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+       <script src="https://kit.fontawesome.com/d4d914cd15.js" crossorigin="anonymous"></script>
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+      section{
+background-color: transparent;
+}
+html{
+  overflow: hidden;
+  overflow-y: scroll;
+}
+body
+{
+  overflow-x: hidden;
+
+background-color: #bbe1fa;
+background-size: 100% 100%;
+color: #07689f;
+}
+
+.carContainer{
+  color: #07689f !important;
+
+}
+nav{
+background-color: #07689f;
+background-size: 100% 100%;
+}
+.navbar-brand{
+  margin-left: 7px;
+  margin-right: 16px;
+}
+li{
+  margin: auto 5px;
+}
+.sar{
+padding:20px;
+color: white;
+}
+.g{
+padding-left: 10%;
+padding-top: 5%;
+padding-bottom: 3%;
+opacity: 0.85;
+margin-top: 0;
+}
+.g:hover
+{
+opacity: 1;
+}
+footer .container{
+}
+.ho{
+margin-right:10px;
+}
+.p-4{
+  padding: .75rem !important;
+}
+  </style>
+  <style media="screen">
+
+  .searchBar{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius:  20px;
+  }
+  .searchButton{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  nav li{
+    margin: auto 10px;
+  }
+  nav a{
+    text-decoration: none;
+    color: #fff;
+  }
+  footer{
+    background-color: #07689f;
+  }
+  svg, .footerContent{
+      color : #f6f6f6 !important;
+  }
+  @media screen and (max-width:800px) {
+    li.nav-item, form{
+      text-align: center;
+    }
+    .searchBar{
+      width:80%;
+      margin-right: 0;
+    }
+    .searchButton{
+      margin-left: 0;
+    }
+    .searchBarField{
+      margin: auto 10% ;
+    }
+  }
+  </style>
+</head>
+<body>
+    <!-- navbar -->
+   
+          <!-- section -->
+          <div data-aos="fade-left">
+            <section class="text-gray-700 body-font">
+
+              <div class="container px-5 py-24 mx-auto ">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 ">RECOMMENDED</h1>
+          <div class="h-1 w-20 bg-indigo-500 rounded"></div>
+          <br>
+
+                <div class="flex flex-wrap -m-4">
+
+                  <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+
+                    <a class="block relative h-48 rounded overflow-hidden ">
+                      <img alt="ecommerce" class="object-cover object-center w-full h-full block " src="https://dummyimage.com/420x260">
+                    </a>
+                    <div class="mt-4">
+                    	<h3 class="tracking-widest text-black-500 text-xs font-medium title-font">CATEGORY</h3>
+                      <h2 class=" title-font text-lg font-medium">The Catalyzer</h2>
+                      <p class="mt-1">$16.00</p>
+                    </div>
+                  </div>
+                  <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                      <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/421x261">
+                    </a>
+                    <div class="mt-4">
+                      <h3 class="tracking-widest text-black-500 text-xs font-medium title-font">CATEGORY</h3>
+                      <h2 class=" title-font text-lg font-medium">Shooting Stars</h2>
+                      <p class="mt-1">$21.15</p>
+                    </div>
+                  </div>
+                  <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                      <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/422x262">
+                    </a>
+                    <div class="mt-4">
+                      <h3 class="tracking-widest text-black-500 text-xs font-medium title-font">CATEGORY</h3>
+                      <h2 class=" title-font text-lg font-medium">Neptune</h2>
+                      <p class="mt-1">$12.00</p>
+                    </div>
+                  </div>
+                  <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                      <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/423x263">
+                    </a>
+                    <div class="mt-4">
+                      <h3 class="tracking-widest text-black-500 text-xs font-medium title-font">CATEGORY</h3>
+                      <h2 class=" title-font text-lg font-medium">The 400 Blows</h2>
+                      <p class="mt-1">$18.40</p>
+                    </div>
+                  </div>
+                  <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                      <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/424x264">
+                    </a>
+                    <div class="mt-4">
+                      <h3 class="tracking-widest text-black-500 text-xs font-medium title-font">CATEGORY</h3>
+                      <h2 class=" title-font text-lg font-medium">The Catalyzer</h2>
+                      <p class="mt-1">$16.00</p>
+                    </div>
+                  </div>
+                  <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                      <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/425x265">
+                    </a>
+                    <div class="mt-4">
+                      <h3 class="tracking-widest text-black-500 text-xs font-medium title-font">CATEGORY</h3>
+                      <h2 class=" title-font text-lg font-medium">Shooting Stars</h2>
+                      <p class="mt-1">$21.15</p>
+                    </div>
+                  </div>
+                  <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                      <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/427x267">
+                    </a>
+                    <div class="mt-4">
+                      <h3 class="tracking-widest text-black-500 text-xs font-medium title-font">CATEGORY</h3>
+                      <h2 class=" title-font text-lg font-medium">Neptune</h2>
+                      <p class="mt-1">$12.00</p>
+                    </div>
+                  </div>
+                  <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                      <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="https://dummyimage.com/428x268">
+                    </a>
+                    <div class="mt-4" id="g">
+                      <h3 class="tracking-widest text-black-500 text-xs font-medium title-font">CATEGORY</h3>
+                      <h2 class=" title-font text-lg font-medium">The 400 Blows</h2>
+                      <p class="mt-1">$18.40</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+        </div>
+      </header>
+ <!-- corousal -->
+ <div data-aos="fade-left">
+   <section class="text-gray-700 body-font">
+    <div class="container px-5 py-24 mx-auto carContainer">
+      <div class="flex flex-wrap w-full mb-20">
+        <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 ">MOST VIEWED ITEMS</h1>
+          <div class="h-1 w-20 bg-indigo-500 rounded"></div>
+        </div>
+        <p class="lg:w-1/2 w-full leading-relaxed text-base"></p>
+      </div>
+      <div class="flex flex-wrap -m-4">
+        <div class="xl:w-1/4 md:w-1/2 p-4">
+          <div class="bg-gray-100 p-6 rounded-lg">
+            <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/720x400" alt="content">
+            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
+            <h2 class="text-lg  font-medium title-font mb-4">Chichen Itza</h2>
+            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+          </div>
+        </div>
+        <div class="xl:w-1/4 md:w-1/2 p-4">
+          <div class="bg-gray-100 p-6 rounded-lg">
+            <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/721x401" alt="content">
+            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
+            <h2 class="text-lg  font-medium title-font mb-4">Colosseum Roma</h2>
+            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+          </div>
+        </div>
+        <div class="xl:w-1/4 md:w-1/2 p-4">
+          <div class="bg-gray-100 p-6 rounded-lg">
+            <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/721x401" alt="content">
+            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
+            <h2 class="text-lg  font-medium title-font mb-4">Colosseum Roma</h2>
+            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+          </div>
+        </div>
+        <div class="xl:w-1/4 md:w-1/2 p-4">
+          <div class="bg-gray-100 p-6 rounded-lg">
+            <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/723x403" alt="content">
+            <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
+            <h2 class="text-lg  font-medium title-font mb-4">San Francisco</h2>
+            <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ </div>
+   <!-- footer -->
+   <footer class="text-gray-700 body-font">
+     <div class="container px-5 py-8 mx-auto flex footerContent items-center sm:flex-row flex-col">
+       <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+
+         <span class="ml-3 text-xl">portal</span>
+       </a>
+       <p class="footerContent text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2020 Site —
+         <a href="https://twitter.com/knyttneve" class="footerContent text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@shopinghub</a>
+       </p>
+       <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+         <a class="text-gray-500">
+           <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+             <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+           </svg>
+         </a>
+         <a class="ml-3 text-gray-500">
+           <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+             <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+           </svg>
+         </a>
+         <a class="ml-3 text-gray-500">
+           <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+             <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+             <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+           </svg>
+         </a>
+         <a class="ml-3 text-gray-500">
+           <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+             <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+             <circle cx="4" cy="4" r="2" stroke="none"></circle>
+           </svg>
+         </a>
+       </span>
+     </div>
+   </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+AOS.init({
+  duration: 1000,
+});
+
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script></body>
+</html>

@@ -1,0 +1,36 @@
+.container {
+  width: 20%;
+  margin-top: 40px;
+  height: 100%;
+}
+
+img {
+  border-radius: 50%;
+  width: 120px;
+}
+
+.right-elements {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+  background-color: white;
+  font-weight: 20px;
+  font-size: 25px;
+  float: right;
+  width: 60%;
+  height: 100%;
+}
+.right-element-details {
+  display: inline-block;
+  margin-left: 5px;
+}
+.left-elements {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+  background-color: lightblue;
+  padding-left: 15px;
+  float: left;
+  width: 36%;
+  height: 500px;
+}
