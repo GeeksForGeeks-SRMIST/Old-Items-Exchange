@@ -17,9 +17,7 @@ router.post(
   [
     check('item_name', 'Please add a item name').notEmpty(),
     check('price', 'Please include price for item').notEmpty().isNumeric(),
-    check('number', 'Please Enter a valid number').isLength({
-      min: 10,
-    }),
+
     check('address', 'Please add a address').notEmpty(),
     check('location', 'Please add a location').notEmpty(),
   ],
@@ -35,7 +33,7 @@ router.post(
       let item = await Item.findOne({ item_name });
 
       if (item) {
-        return res.status(400).json({ msg: 'Item already exists' });
+        return res.status(200).json({ msg: 'Item already exists' });
       }
 
       item = new Item({
