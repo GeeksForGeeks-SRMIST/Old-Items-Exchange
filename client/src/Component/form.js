@@ -43,11 +43,12 @@ const FormEntry = () => {
           number,
           address,
           location,
-          image: [],
+          images: [],
         },
         {
           headers: {
-            "x-auth-token": token,
+            "x-auth-token":
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWYyMTJiZmFmODZhNTMzN2U4YzhhODRiIn0sImlhdCI6MTU5NjI4NjM3NiwiZXhwIjoxNTk5ODg2Mzc2fQ.iwAz_EbwNgwA8PheuOwUgS5rtX79weNWaHdk-oYmXQY",
           },
         }
       )
