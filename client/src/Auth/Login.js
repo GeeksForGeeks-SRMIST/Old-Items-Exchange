@@ -37,7 +37,7 @@ class Login extends Component {
       password: this.state.password,
     })
       .then(
-        (res) => localStorage.setItem("token", res.data),
+        (res) => localStorage.setItem("token", JSON.stringify(res.data.token)),
         this.setState({ valid: true })
       )
       .catch((err) => console.log(err));

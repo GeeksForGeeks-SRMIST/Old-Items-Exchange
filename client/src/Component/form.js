@@ -43,18 +43,18 @@ const FormEntry = () => {
           number,
           address,
           location,
-          image: "xyz",
+          image: [],
         },
         {
-          header: {
-            "x-auth-token":
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWYyMTJiZmFmODZhNTMzN2U4YzhhODRiIn0sImlhdCI6MTU5NjI4NDY2NCwiZXhwIjoxNTk5ODg0NjY0fQ.-wY24Cz70dkTwPXpP5-zn6dz7VXFNkaA-qNls6WJinU",
+          headers: {
+            "x-auth-token": token,
           },
         }
       )
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };
+  console.log(token);
   return (
     <div>
       <div>

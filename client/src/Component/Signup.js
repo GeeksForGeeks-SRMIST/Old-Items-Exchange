@@ -40,7 +40,7 @@ const Signup = () => {
       email,
       password,
     })
-      .then((res) => updateToken(res.data))
+      .then((res) => JSON.stringify(updateToken(res.data.token)))
       .catch((err) => updateMessage(err));
     localStorage.setItem("token", token);
   };

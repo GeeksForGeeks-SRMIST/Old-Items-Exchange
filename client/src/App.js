@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import Signup from "./Component/Signup";
 import Home from "./Component/Home";
 import Form from "./Component/form";
+/* import FileUpload from "./Component/Fileupload"; */
 class App extends Component {
   state = {
     user: {},
@@ -22,6 +23,7 @@ class App extends Component {
       }
     });
   } */
+
   render() {
     return (
       <div className="App">
@@ -30,6 +32,7 @@ class App extends Component {
           <Route path="/login" component={Login}></Route>
           <Route path="/signup" component={Signup}></Route>
           <Route path="/form" component={Form}></Route>
+          {/* Route path="/fileupload" component={FileUpload}></Route> */}
         </Switch>
         {/*  {this.state.user ? <Signup /> : <Form></Form>} */}
       </div>
