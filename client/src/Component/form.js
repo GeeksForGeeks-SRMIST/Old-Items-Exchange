@@ -4,6 +4,8 @@ import axios from 'axios';
 import './form.css';
 import { header } from 'express-validator';
 
+let token;
+
 const FormEntry = () => {
   const [product, updateProduct] = useState('');
   const [price, updatePrice] = useState(null);
@@ -31,9 +33,17 @@ const FormEntry = () => {
     e.preventDefault();
     updatePrice(e.target.value);
   };
-  const token = localStorage.getItem('token');
+  let tkn = '';
+  useEffect(() => {
+    token = localStorage.getItem('token');
+    tkn = token.toString();
+    console.log(tkn);
+  });
   const postdetail = async (e) => {
     e.preventDefault();
+    const headers = {
+      'x-auth-token': tkn,
+    };
     await axios
       .post(
         '/api/item',
@@ -46,15 +56,16 @@ const FormEntry = () => {
           images: [],
         },
         {
-          headers: {
-            'x-auth-token':
-              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWYyMTJiZmFmODZhNTMzN2U4YzhhODRiIn0sImlhdCI6MTU5NjI4NjM3NiwiZXhwIjoxNTk5ODg2Mzc2fQ.iwAz_EbwNgwA8PheuOwUgS5rtX79weNWaHdk-oYmXQY',
-          },
+          headers: headers,
         }
       )
       .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.error(err);
+        console.log(err);
+      });
   };
+
   return (
     <div>
       <div>
