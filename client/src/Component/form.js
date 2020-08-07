@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import "./form.css";
 import { header } from "express-validator";
+
+let token;
 
 const FormEntry = () => {
   const [product, updateProduct] = useState("");
@@ -10,6 +12,7 @@ const FormEntry = () => {
   const [number, updateNumber] = useState(null);
   const [address, updateAddress] = useState("");
   const [location, updateLocation] = useState("");
+  const [valid, updateValid] = useState(false);
 
   const productName = (e) => {
     e.preventDefault();
@@ -31,9 +34,17 @@ const FormEntry = () => {
     e.preventDefault();
     updatePrice(e.target.value);
   };
-  const token = localStorage.getItem("token");
+  let tkn = "";
+  useEffect(() => {
+    token = localStorage.getItem("token");
+    tkn = token.toString();
+    console.log(tkn);
+  });
   const postdetail = async (e) => {
     e.preventDefault();
+    const headers = {
+      "x-auth-token": tkn,
+    };
     await axios
       .post(
         "/api/item",
@@ -46,16 +57,16 @@ const FormEntry = () => {
           images: [],
         },
         {
-          headers: {
-            "x-auth-token":
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWYyMTJiZmFmODZhNTMzN2U4YzhhODRiIn0sImlhdCI6MTU5NjI4NjM3NiwiZXhwIjoxNTk5ODg2Mzc2fQ.iwAz_EbwNgwA8PheuOwUgS5rtX79weNWaHdk-oYmXQY",
-          },
+          headers: headers,
         }
       )
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+      .then((res) => updateValid(true))
+      .catch((err) => {
+        console.error(err);
+        console.log(err);
+      });
   };
-  console.log(token);
+  if (valid) return <Redirect to="/"></Redirect>;
   return (
     <div>
       <div>

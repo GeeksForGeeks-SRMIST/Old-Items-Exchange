@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import Signup from "./Component/Signup";
 import Home from "./Component/Home";
 import Form from "./Component/form";
+import ProfilePage from "./Component/UserProfile";
 /* import FileUpload from "./Component/Fileupload"; */
 class App extends Component {
   state = {
@@ -30,6 +31,9 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <Route path="/login" component={Login}></Route>
+          {localStorage.getItem("token") ? (
+            <Route path="/profile" component={ProfilePage}></Route>
+          ) : null}
           <Route path="/signup" component={Signup}></Route>
           <Route path="/form" component={Form}></Route>
           {/* Route path="/fileupload" component={FileUpload}></Route> */}

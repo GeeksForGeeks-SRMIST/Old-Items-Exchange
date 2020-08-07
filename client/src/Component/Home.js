@@ -94,7 +94,9 @@ export const Home = () => {
   if (localStorage.getItem("token")) {
     extras = (
       <div>
-        <Link className="navbar-brand">Profile</Link>
+        <Link className="navbar-brand" to="/profile">
+          Profile
+        </Link>
         <Link className="navbar-brand" onClick={logout}>
           Logout
         </Link>
@@ -126,7 +128,6 @@ export const Home = () => {
         {extras}
       </nav>
       <div className="container-fluid">
-        <button onClick={logout}>Logout</button>
         <h1 className="recomendation">RECOMENDED</h1>
         {card}
       </div>

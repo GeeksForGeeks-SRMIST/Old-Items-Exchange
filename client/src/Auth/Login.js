@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import { Route, Redirect, Link } from "react-router-dom";
 import Home from "../Component/Home";
 import fire from "../config/fire";
@@ -36,13 +36,11 @@ class Login extends Component {
       email: this.state.email,
       password: this.state.password,
     })
-      .then(
-        (res) => localStorage.setItem("token", JSON.stringify(res.data.token)),
-        this.setState({ valid: true })
-      )
+      .then((res) => this.setState({ valid: res.data.token }))
       .catch((err) => console.log(err));
-  };
 
+    console.log(localStorage.getItem("token"));
+  };
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value,
@@ -53,6 +51,7 @@ class Login extends Component {
     this.setState({ valid: true });
   } */
   render() {
+    if (this.state.valid) localStorage.setItem("token", this.state.valid);
     if (this.state.valid) return <Redirect to="/"></Redirect>;
     return (
       <div className="image1">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, Route, Redirect } from "react-router-dom";
 import Home from "./Home";
 import "./signup.css";
@@ -40,9 +40,11 @@ const Signup = () => {
       email,
       password,
     })
-      .then((res) => JSON.stringify(updateToken(res.data.token)))
-      .catch((err) => updateMessage(err));
-    localStorage.setItem("token", token);
+      .then(
+        (res) => localStorage.setItem("token", res.data.token),
+        updateToken(localStorage.getItem("token"))
+      )
+      .catch((err) => console.log(err));
   };
 
   /* 
