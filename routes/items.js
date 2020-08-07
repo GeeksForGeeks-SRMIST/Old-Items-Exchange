@@ -110,9 +110,9 @@ router.put(
 );
 
 // @route       PUT api/item/:id
-// @dsc         Update item
-// @access      Private
-router.get('/list', auth, async (req, res) => {
+// @dsc         List item
+// @access      Public
+router.get('/list', async (req, res) => {
   try {
     let items = await Item.find({});
     return res.json({ items });
