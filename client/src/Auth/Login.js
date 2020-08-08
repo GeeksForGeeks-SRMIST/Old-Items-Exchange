@@ -16,6 +16,7 @@ class Login extends Component {
       password: "",
       errMessage: " ",
       valid: false,
+      userId: "",
     };
   }
 
@@ -32,11 +33,13 @@ class Login extends Component {
         this.setState({ errMessage: err.message });
       }); */
 
-    await Axios.post("/api/Auth", {
+    await Axios.post("/api/auth", {
       email: this.state.email,
       password: this.state.password,
     })
-      .then((res) => this.setState({ valid: res.data.token }))
+      .then((res) =>
+        this.setState({ valid: res.data.token, userId: res.data.userId })
+      )
       .catch((err) => console.log(err));
 
     console.log(localStorage.getItem("token"));
@@ -51,7 +54,10 @@ class Login extends Component {
     this.setState({ valid: true });
   } */
   render() {
-    if (this.state.valid) localStorage.setItem("token", this.state.valid);
+    if (this.state.valid) {
+      localStorage.setItem("token", this.state.valid);
+      localStorage.setItem("userId", this.state.userId);
+    }
     if (this.state.valid) return <Redirect to="/"></Redirect>;
     return (
       <div className="image1">

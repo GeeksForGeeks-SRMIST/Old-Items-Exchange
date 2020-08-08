@@ -5,6 +5,7 @@ import { sign } from "jsonwebtoken";
 export const Home = () => {
   const logout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("userId");
   };
 
   //card disply
@@ -91,7 +92,7 @@ export const Home = () => {
 
   //navbar
 
-  if (localStorage.getItem("token")) {
+  if (localStorage.getItem("token") || localStorage.getItem("userId")) {
     extras = (
       <div>
         <Link className="navbar-brand" to="/profile">
@@ -106,7 +107,7 @@ export const Home = () => {
 
   let signup = null;
 
-  if (!localStorage.getItem("token")) {
+  if (!localStorage.getItem("token") || localStorage.getItem("userId")) {
     signup = (
       <div>
         <Link className="navbar-brand" to="/signup">
