@@ -12,6 +12,10 @@ export const UserProfile = () => {
     requestUserDetails();
   }, [product]);
 
+  /* 
+requests userdetail using token auth passed in the header
+   */
+
   const requestUserDetails = async (e) => {
     const head = {
       "x-auth-token": localStorage.getItem("token").toString(),
@@ -29,6 +33,12 @@ export const UserProfile = () => {
       })
       .catch((err) => console.log(err));
   };
+
+  /* 
+requestList is used to fetch data from the server and display it 
+uses token derived from localstorage which is stingified and passed on 
+as head
+   */
 
   const requestList = async (e) => {
     const head = {
@@ -48,6 +58,12 @@ export const UserProfile = () => {
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };
+
+  /* 
+this function productlist is used to diplay every element fetch through api
+and displaay it specifically to userID using filter and map and displaying it
+on to a div component
+*/
 
   const productList = product
     .filter((data) => data.user === localStorage.getItem("userId"))
@@ -73,6 +89,7 @@ export const UserProfile = () => {
         </div>
       </div>
     ));
+
   return (
     <div>
       <div className="contain-box shadow-lg p-3 mb-5 bg-white rounded">
