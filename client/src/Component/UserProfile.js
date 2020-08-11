@@ -10,7 +10,7 @@ export const UserProfile = () => {
   useEffect(() => {
     requestList();
     requestUserDetails();
-  }, []);
+  }, [product]);
 
   const requestUserDetails = async (e) => {
     const head = {
@@ -41,15 +41,19 @@ export const UserProfile = () => {
       .catch((err) => console.log(err));
   };
 
-  /*   updateNewProduct(
-    product.filter((data) => data.userId == localStorage.getItem("userId"))
-  ); */
+  const deletehandler = async (key) => {
+    await Axios.delete(`/api/item/list/${key}`, {
+      headers: localStorage.getItem("token").toString(),
+    })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
 
   const productList = product
     .filter((data) => data.user === localStorage.getItem("userId"))
     .map((data) => (
       <div
-        key={data.item_name}
+        key={data._id}
         className="contain-items shadow-lg p-3 mb-5 bg-white rounded"
       >
         <div className="text-contain-below">
@@ -60,11 +64,15 @@ export const UserProfile = () => {
           <h1>{data.item_name}</h1>
           <p>{data.price}</p>
           <p>{data.location}</p>
-          <button className="btn btn-danger">Delete</button>
+          <button
+            className="btn btn-danger"
+            onClick={() => deletehandler(data._id)}
+          >
+            Delete
+          </button>
         </div>
       </div>
     ));
-
   return (
     <div>
       <div className="contain-box shadow-lg p-3 mb-5 bg-white rounded">

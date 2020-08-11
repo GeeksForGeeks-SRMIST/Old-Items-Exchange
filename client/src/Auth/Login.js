@@ -1,8 +1,6 @@
 import React, { Component, useEffect } from "react";
 import { Route, Redirect, Link } from "react-router-dom";
-import Home from "../Component/Home";
-import fire from "../config/fire";
-import Signup from "../Component/Signup";
+
 import "./Login.css";
 import Axios from "axios";
 class Login extends Component {
