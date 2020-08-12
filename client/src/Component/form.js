@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import "./form.css";
+import Select from "react-select";
 import { header } from "express-validator";
 
 let token;
@@ -13,10 +14,15 @@ const FormEntry = () => {
   const [address, updateAddress] = useState("");
   const [location, updateLocation] = useState("");
   const [valid, updateValid] = useState(false);
+  const [category, updateCategory] = useState("");
 
   const productName = (e) => {
     e.preventDefault();
     updateProduct(e.target.value);
+  };
+  const categoryhandle = (value) => {
+    value.preventDefault();
+    updateCategory(value);
   };
   const Number = (e) => {
     e.preventDefault();
@@ -55,17 +61,32 @@ const FormEntry = () => {
           address,
           location,
           images: [],
+          category,
         },
         {
           headers: headers,
         }
       )
-      .then((res) => updateValid(true))
+      .then(() => updateValid(true))
       .catch((err) => {
         console.error(err);
         console.log(err);
       });
   };
+  const options = [
+    { value: "Automobile", label: "Automobile" },
+    { value: "Furniture", label: "Furniture" },
+    { value: "Others", label: "Others" },
+    { value: "Electronic Appliances", label: "Electronic Appliances" },
+    { value: "Gaming Equipment", label: "Gaming Equipment" },
+  ];
+
+  const MyComponent = () => (
+    <Select
+      options={options}
+      onChange={(value) => updateCategory(value.value)}
+    />
+  );
   if (valid) return <Redirect to="/"></Redirect>;
   return (
     <div>
@@ -91,7 +112,7 @@ const FormEntry = () => {
       <div className="background-form">
         <div className="container-sm">
           <div className="contanier-sm shadow-lg  bg-white rounded">
-            <div className="p-3 mb-5">
+            <div className="p-3 mb-5" style={{ height: "80vh" }}>
               <form onSubmit={postdetail}>
                 <input
                   type="text"
@@ -99,7 +120,7 @@ const FormEntry = () => {
                   aria-describedby="emailHelp"
                   name="name"
                   placeholder="Product Name"
-                  onChange={productName}
+                  onClick={productName}
                 />
                 <br></br>
                 <br></br>
@@ -109,7 +130,7 @@ const FormEntry = () => {
                   aria-describedby="emailHelp"
                   name="number"
                   placeholder="Number"
-                  onChange={Number}
+                  onClick={Number}
                 />
                 <br></br>
                 <br></br>
@@ -119,7 +140,7 @@ const FormEntry = () => {
                   aria-describedby="emailHelp"
                   name="number"
                   placeholder="Price"
-                  onChange={Price}
+                  onClick={Price}
                 />
                 <br></br>
                 <br></br>
@@ -129,7 +150,7 @@ const FormEntry = () => {
                   aria-describedby="emailHelp"
                   name="location"
                   placeholder="Location"
-                  onChange={Location}
+                  onClick={Location}
                 />
                 <br></br>
                 <br></br>
@@ -139,9 +160,11 @@ const FormEntry = () => {
                   className="form-control"
                   aria-describedby="emailHelp"
                   placeholder="address"
-                  onChange={Address}
+                  onClick={Address}
                 />
                 <br></br>
+                <br></br>
+                {MyComponent()}
                 <button
                   className="btn btn-primary"
                   style={{ marginLeft: "178px" }}
