@@ -5,6 +5,12 @@ const ItemSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'users',
   },
+  author: {
+    type: String,
+  },
+  category: {
+    type: String,
+  },
   item_name: {
     type: String,
     required: true,
