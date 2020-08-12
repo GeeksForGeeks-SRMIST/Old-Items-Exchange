@@ -5,6 +5,7 @@ import Signup from "./Component/Signup";
 import Home from "./Component/Home";
 import Form from "./Component/form";
 import ProfilePage from "./Component/UserProfile";
+import Findpage from "./Component/findpage";
 /* import FileUpload from "./Component/Fileupload"; */
 class App extends Component {
   state = {
@@ -36,6 +37,7 @@ class App extends Component {
           ) : null}
           <Route path="/signup" component={Signup}></Route>
           <Route path="/form" component={Form}></Route>
+          <Route path="/search" component={Findpage} />
           {/* Route path="/fileupload" component={FileUpload}></Route> */}
         </Switch>
         {/*  {this.state.user ? <Signup /> : <Form></Form>} */}

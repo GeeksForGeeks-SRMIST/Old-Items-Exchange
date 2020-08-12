@@ -9,13 +9,16 @@ export const Home = () => {
   };
 
   const [product, updateProduct] = useState([]);
+  const [type, updateType] = useState("");
   const userItem = async () => {
     await Axios.get("/api/item/list")
       .then((res) => updateProduct(res.data.items))
       .catch((err) => console.log(err));
   };
-  const card = product.map((data) => (
-    <div key={data.number} className="col mb-4">
+  let card;
+
+  card = product.map((data) => (
+    <div key={Math.random() * 1000} className="col mb-4">
       <div className="card">
         <img
           src="https://cdn.pixabay.com/photo/2015/09/02/12/25/bmw-918408_1280.jpg"
@@ -139,9 +142,6 @@ export const Home = () => {
       </div>
     );
   }
-  //footer
-  let footer = null;
-  footer = <div></div>;
   return (
     <div>
       <nav class="navbar navbar-light  bg-light">
@@ -152,6 +152,19 @@ export const Home = () => {
         {extras}
       </nav>
       <div className="container-fluid">
+        {/*  <input
+          type="text"
+          placeholder="Enter item or place"
+          className="form-control home"
+          aria-describedby="emailHelp"
+          onChange={typeChangeHandle}
+          style={{ width: "15rem", float: "left" }}
+          value={type}
+        ></input>
+        <button className="btn btn-primary" onClick={changeType}>
+          Search
+        </button> */}
+
         <h1 className="recomendation">RECOMENDED</h1>
         <div className="row row-cols-1 row-cols-md-3">{card}</div>
       </div>
