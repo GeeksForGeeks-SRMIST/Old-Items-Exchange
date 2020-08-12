@@ -1,10 +1,8 @@
-import React, { Component } from 'react';
-import { Route, Redirect, Link } from 'react-router-dom';
-import Home from '../Component/Home';
-import fire from '../config/fire';
-import Signup from '../Component/Signup';
-import './Login.css';
-import Axios from 'axios';
+import React, { Component, useEffect } from "react";
+import { Route, Redirect, Link } from "react-router-dom";
+
+import "./Login.css";
+import Axios from "axios";
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -12,14 +10,15 @@ class Login extends Component {
     this.handleChange = this.handleChange.bind(this);
 
     this.state = {
-      email: '',
-      password: '',
-      errMessage: ' ',
+      email: "",
+      password: "",
+      errMessage: " ",
       valid: false,
+      userId: "",
     };
   }
 
-  errMessage = ' ';
+  errMessage = " ";
   login = async (e) => {
     e.preventDefault();
     /*  fire
@@ -32,19 +31,17 @@ class Login extends Component {
         this.setState({ errMessage: err.message });
       }); */
 
-    await Axios.post('/api/Auth', {
+    await Axios.post("/api/auth", {
       email: this.state.email,
       password: this.state.password,
     })
-      .then(
-        (res) => localStorage.setItem('token', res.data.token),
-        this.setState({ valid: true })
+      .then((res) =>
+        this.setState({ valid: res.data.token, userId: res.data.userId })
       )
       .catch((err) => console.log(err));
 
-    console.log(localStorage.getItem('token'));
+    console.log(localStorage.getItem("token"));
   };
-
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value,
@@ -55,46 +52,50 @@ class Login extends Component {
     this.setState({ valid: true });
   } */
   render() {
-    if (this.state.valid) return <Redirect to='/'></Redirect>;
+    if (this.state.valid) {
+      localStorage.setItem("token", this.state.valid);
+      localStorage.setItem("userId", this.state.userId);
+    }
+    if (this.state.valid) return <Redirect to="/"></Redirect>;
     return (
-      <div className='image1'>
-        <div className='container-sm'>
-          <div className='contanier-sm shadow-lg p-3 mb-5 bg-white rounded'>
-            <div className='p-3 mb-5'>
+      <div className="image1">
+        <div className="container-sm">
+          <div className="contanier-sm shadow-lg p-3 mb-5 bg-white rounded">
+            <div className="p-3 mb-5">
               <form>
                 <input
-                  type='email'
-                  className='form-control'
-                  aria-describedby='emailHelp'
-                  id='email'
-                  name='email'
-                  placeholder='Email'
+                  type="email"
+                  className="form-control"
+                  aria-describedby="emailHelp"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
                   onChange={this.handleChange}
                   value={this.state.email}
                 />
                 <br></br>
                 <br></br>
                 <input
-                  name='password'
-                  type='password'
-                  className='form-control'
-                  aria-describedby='emailHelp'
+                  name="password"
+                  type="password"
+                  className="form-control"
+                  aria-describedby="emailHelp"
                   onChange={this.handleChange}
-                  id='password'
-                  placeholder='Password'
+                  id="password"
+                  placeholder="Password"
                   value={this.state.password}
                 />
                 <br></br>
-                <button onClick={this.login} className='btn btn-primary'>
+                <button onClick={this.login} className="btn btn-primary">
                   Login
                 </button>
                 <br></br>
                 <br></br>
 
-                <Link to='/signup'>new user? Signup here!</Link>
+                <Link to="/signup">new user? Signup here!</Link>
               </form>
 
-              <p className='para'>{this.state.errMessage}</p>
+              <p className="para">{this.state.errMessage}</p>
             </div>
           </div>
         </div>

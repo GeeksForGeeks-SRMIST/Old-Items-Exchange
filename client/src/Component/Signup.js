@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, Route, Redirect } from "react-router-dom";
 import Home from "./Home";
 import "./signup.css";
 import Axios from "axios";
+import { localsName } from "ejs";
 const Signup = () => {
   const [email, updateEmail] = useState(" ");
   const [password, updatePassword] = useState("");
   const [phone, updatePhone] = useState(" ");
   const [name, updateName] = useState(" ");
-  const [gender, updateGender] = useState(" ");
-  const [token, updateToken] = useState(null);
-  const [errMessage, updateMessage] = useState(" ");
+  const [address, updateAddress] = useState(" ");
+  const [userId, updateUserId] = useState(null);
+  const [location, updateLocation] = useState("");
 
   const emailhandle = (e) => {
     e.preventDefault();
@@ -28,9 +29,13 @@ const Signup = () => {
     e.preventDefault();
     updateName(e.target.value);
   };
-  const genderhandle = (e) => {
+  const addresshandle = (e) => {
     e.preventDefault();
-    updateGender(e.target.value);
+    updateAddress(e.target.value);
+  };
+  const locationhandle = (e) => {
+    e.preventDefault();
+    updateLocation(e.target.value);
   };
 
   const deliver = async (e) => {
@@ -39,10 +44,18 @@ const Signup = () => {
       name,
       email,
       password,
+      address,
+      location,
+      phone,
     })
-      .then((res) => updateToken(res.data))
-      .catch((err) => updateMessage(err));
-    localStorage.setItem("token", token);
+      .then((res) => {
+        return (
+          localStorage.setItem("token", res.data.token),
+          localStorage.setItem("userId", res.data.userId),
+          updateUserId(localStorage.getItem("token"))
+        );
+      })
+      .catch((err) => console.log(err));
   };
 
   /* 
@@ -59,13 +72,13 @@ const Signup = () => {
     fire.auth().signOut();
   }; */
 
-  if (token) {
+  if (userId) {
     return <Redirect to="/"></Redirect>;
   }
 
-  if (token) {
+  /*   if (token) {
     return <Home token={token}></Home>;
-  }
+  } */
   return (
     <div>
       <div>
@@ -141,14 +154,25 @@ const Signup = () => {
                 ></input>
               </div>
               <div>
-                <label>Gender</label>
+                <label>address</label>
                 <input
-                  value={gender}
+                  value={address}
                   type="text"
-                  name="updataGender"
+                  name="updateAddress"
                   className="form-control"
                   aria-describedby="emailHelp"
-                  onChange={genderhandle}
+                  onChange={addresshandle}
+                ></input>
+              </div>
+              <div>
+                <label>location</label>
+                <input
+                  value={location}
+                  type="text"
+                  name="updateLocation"
+                  className="form-control"
+                  aria-describedby="emailHelp"
+                  onChange={locationhandle}
                 ></input>
               </div>
               <button
@@ -159,7 +183,6 @@ const Signup = () => {
                 signup
               </button>
             </form>
-            <p className="danger">{errMessage}</p>
           </div>
         </div>
       </div>
