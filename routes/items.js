@@ -6,7 +6,6 @@ const User = require('../models/User');
 const auth = require('../middleware/auth');
 const mongoose = require('mongoose');
 const { response } = require('express');
-const { findByIdAndDelete } = require('../models/Item');
 const ObjectId = mongoose.Types.ObjectId;
 
 // @route       POST api/item
@@ -36,6 +35,8 @@ router.post(
         return res.status(200).json({ msg: 'Item already exists' });
       }
 
+      const author = await User.findById(req.user.id).select('-password');
+
       item = new Item({
         item_name,
         price,
@@ -44,6 +45,7 @@ router.post(
         location,
         images,
         user: req.user.id,
+        author: author.name,
       });
 
       await item.save();
@@ -115,6 +117,7 @@ router.put(
 router.get('/list', async (req, res) => {
   try {
     let items = await Item.find({});
+
     return res.json({ items });
   } catch (err) {
     console.error(err.message);
