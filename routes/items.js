@@ -26,7 +26,15 @@ router.post(
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    const { item_name, price, number, address, location, images } = req.body;
+    const {
+      item_name,
+      price,
+      number,
+      address,
+      location,
+      images,
+      category,
+    } = req.body;
 
     try {
       let item = await Item.findOne({ item_name });
@@ -44,6 +52,7 @@ router.post(
         address,
         location,
         images,
+        category,
         user: req.user.id,
         author: author.name,
       });

@@ -8,6 +8,9 @@ const ItemSchema = mongoose.Schema({
   author: {
     type: String,
   },
+  category: {
+    type: String,
+  },
   item_name: {
     type: String,
     required: true,
