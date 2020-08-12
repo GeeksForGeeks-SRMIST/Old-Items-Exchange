@@ -74,4 +74,17 @@ router.post(
   }
 );
 
+// @route       GET api/getUser/:id
+// @dsc         get user with uid
+// @access      Public
+router.get('/getUser/:id', async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id).select('-password');
+    res.json(user);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
 module.exports = router;
