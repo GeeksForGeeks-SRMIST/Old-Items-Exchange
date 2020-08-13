@@ -10,7 +10,7 @@ export const UserProfile = () => {
   useEffect(() => {
     requestList();
     requestUserDetails();
-  }, [product]);
+  }, []);
 
   /* 
 requests userdetail using token auth passed in the header

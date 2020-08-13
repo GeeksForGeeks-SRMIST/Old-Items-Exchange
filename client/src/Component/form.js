@@ -120,7 +120,7 @@ const FormEntry = () => {
                   aria-describedby="emailHelp"
                   name="name"
                   placeholder="Product Name"
-                  onClick={productName}
+                  onChange={productName}
                 />
                 <br></br>
                 <br></br>
@@ -130,7 +130,7 @@ const FormEntry = () => {
                   aria-describedby="emailHelp"
                   name="number"
                   placeholder="Number"
-                  onClick={Number}
+                  onChange={Number}
                 />
                 <br></br>
                 <br></br>
@@ -140,7 +140,7 @@ const FormEntry = () => {
                   aria-describedby="emailHelp"
                   name="number"
                   placeholder="Price"
-                  onClick={Price}
+                  onChange={Price}
                 />
                 <br></br>
                 <br></br>
@@ -150,7 +150,7 @@ const FormEntry = () => {
                   aria-describedby="emailHelp"
                   name="location"
                   placeholder="Location"
-                  onClick={Location}
+                  onChange={Location}
                 />
                 <br></br>
                 <br></br>
@@ -160,7 +160,7 @@ const FormEntry = () => {
                   className="form-control"
                   aria-describedby="emailHelp"
                   placeholder="address"
-                  onClick={Address}
+                  onChange={Address}
                 />
                 <br></br>
                 <br></br>
@@ -168,6 +168,7 @@ const FormEntry = () => {
                 <button
                   className="btn btn-primary"
                   style={{ marginLeft: "178px" }}
+                  type="submit"
                 >
                   Submit
                 </button>

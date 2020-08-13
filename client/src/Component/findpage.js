@@ -24,6 +24,7 @@ export const Findpage = () => {
               className="card-img-top"
             />
             <h5 className="card-title">{data.item_name}</h5>
+            <h3 className="card-title">{data.author}</h3>
             <p className="card-text">{data.price}</p>
             <p>{data.location}</p>
             <p>{data.number}</p>
