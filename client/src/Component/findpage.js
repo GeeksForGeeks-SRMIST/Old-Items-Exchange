@@ -20,7 +20,10 @@ export const Findpage = () => {
         <div key={Math.random() * 1000} className="col mb-4">
           <div className="card">
             <img
-              src="https://cdn.pixabay.com/photo/2015/09/02/12/25/bmw-918408_1280.jpg"
+              src={
+                data.images[0] ||
+                "https://cdn.pixabay.com/photo/2015/09/02/12/25/bmw-918408_1280.jpg"
+              }
               className="card-img-top"
             />
             <h5 className="card-title">{data.item_name}</h5>

@@ -48,31 +48,43 @@ const FormEntry = () => {
   useEffect(() => {
     token = localStorage.getItem("token");
     tkn = token.toString();
-    console.log(tkn);
   });
-  const imageHandler = (image) => {
-    updateImage(image);
+  const imageHandler = (e) => {
+    if (e.target.files[0]) {
+      updateImage(e.target.files[0]);
+    }
   };
 
   const imageSaveHandler = (e) => {
     e.preventDefault();
-    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+    const uploadTask = storage.child(`images/${image.name}`).put(image);
     uploadTask.on(
       "state_changed",
+      (snapshot) => {
+        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log("Upload is " + progress + "% done");
+        switch (snapshot.state) {
+          case firebase.storage.TaskState.PAUSED: // or 'paused'
+            console.log("Upload is paused");
+            break;
+          case firebase.storage.TaskState.RUNNING: // or 'running'
+            console.log("Upload is running");
+            break;
+        }
+      },
       (error) => {
         console.log(error);
       },
       () => {
-        storage
-          .ref("images")
-          .child(image.name)
+        uploadTask.snapshot.ref
           .getDownloadURL()
-          .then((url) => updatePath(url))
-          .catch((err) => console.log(err));
+          .then((downloadURL) => updatePath(downloadURL));
       }
     );
   };
   console.log(path);
+  const newpath = path.toString();
+  console.log(newpath);
 
   const postdetail = async (e) => {
     e.preventDefault();
@@ -88,7 +100,7 @@ const FormEntry = () => {
           number,
           address,
           location,
-          images: [path],
+          images: [newpath],
           category,
         },
         {
@@ -200,7 +212,7 @@ const FormEntry = () => {
                 <input
                   placeholder="Select Image"
                   type="file"
-                  onChange={(e) => imageHandler(e.target.files[0])}
+                  onChange={imageHandler}
                 ></input>
                 <button className="btn btn-primary" onClick={imageSaveHandler}>
                   Upload

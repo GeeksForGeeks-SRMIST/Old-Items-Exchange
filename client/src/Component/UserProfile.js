@@ -74,7 +74,10 @@ on to a div component
       >
         <div className="text-contain-below">
           <img
-            src="https://johnlewis.scene7.com/is/image/JohnLewis/237001430alt5?$rsp-pdp-port-1440$"
+            src={
+              data.images[0] ||
+              "https://johnlewis.scene7.com/is/image/JohnLewis/237001430alt5?$rsp-pdp-port-1440$"
+            }
             className="product-image"
           />
           <h1>{data.item_name}</h1>
