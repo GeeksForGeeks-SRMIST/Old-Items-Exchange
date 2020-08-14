@@ -14,7 +14,7 @@ export const Findpage = () => {
   const changeType = () => {
     card = product
       .filter((data) => {
-        return data.item_name == type || data.location == type;
+        return data.item_name === type || data.location === type;
       })
       .map((data) => (
         <div key={Math.random() * 1000} className="col mb-4">

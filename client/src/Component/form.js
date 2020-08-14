@@ -4,6 +4,8 @@ import axios from "axios";
 import "./form.css";
 import Select from "react-select";
 import { header } from "express-validator";
+import firebase, { storage } from "../config/fire";
+import { database } from "firebase";
 
 let token;
 
@@ -15,15 +17,17 @@ const FormEntry = () => {
   const [location, updateLocation] = useState("");
   const [valid, updateValid] = useState(false);
   const [category, updateCategory] = useState("");
+  const [image, updateImage] = useState(null);
+  const [path, updatePath] = useState("");
 
   const productName = (e) => {
     e.preventDefault();
     updateProduct(e.target.value);
   };
-  const categoryhandle = (value) => {
+  /*  const categoryhandle = (value) => {
     value.preventDefault();
     updateCategory(value);
-  };
+  }; */
   const Number = (e) => {
     e.preventDefault();
     updateNumber(e.target.value);
@@ -46,6 +50,30 @@ const FormEntry = () => {
     tkn = token.toString();
     console.log(tkn);
   });
+  const imageHandler = (image) => {
+    updateImage(image);
+  };
+
+  const imageSaveHandler = (e) => {
+    e.preventDefault();
+    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+    uploadTask.on(
+      "state_changed",
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        storage
+          .ref("images")
+          .child(image.name)
+          .getDownloadURL()
+          .then((url) => updatePath(url))
+          .catch((err) => console.log(err));
+      }
+    );
+  };
+  console.log(path);
+
   const postdetail = async (e) => {
     e.preventDefault();
     const headers = {
@@ -60,7 +88,7 @@ const FormEntry = () => {
           number,
           address,
           location,
-          images: [],
+          images: [path],
           category,
         },
         {
@@ -73,6 +101,7 @@ const FormEntry = () => {
         console.log(err);
       });
   };
+
   const options = [
     { value: "Automobile", label: "Automobile" },
     { value: "Furniture", label: "Furniture" },
@@ -87,6 +116,7 @@ const FormEntry = () => {
       onChange={(value) => updateCategory(value.value)}
     />
   );
+
   if (valid) return <Redirect to="/"></Redirect>;
   return (
     <div>
@@ -165,6 +195,16 @@ const FormEntry = () => {
                 <br></br>
                 <br></br>
                 {MyComponent()}
+                <br></br>
+                <br></br>
+                <input
+                  placeholder="Select Image"
+                  type="file"
+                  onChange={(e) => imageHandler(e.target.files[0])}
+                ></input>
+                <button className="btn btn-primary" onClick={imageSaveHandler}>
+                  Upload
+                </button>
                 <button
                   className="btn btn-primary"
                   style={{ marginLeft: "178px" }}

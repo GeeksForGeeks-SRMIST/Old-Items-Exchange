@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import firebase from "firebase";
+
 import { Link } from "react-router-dom";
 import Select from "react-select";
 import Axios from "axios";
@@ -14,7 +16,7 @@ export const Home = () => {
 
   const userItem = async () => {
     await Axios.get("/api/item/list")
-      .then((res) => updateProduct(res.data.items))
+      .then((res) => console.log(res.data.items))
       .catch((err) => console.log(err));
   };
   const options = [
@@ -33,10 +35,20 @@ export const Home = () => {
     />
   );
   let card;
+
+  /*   let imageLoader = (imageUrl) => {
+    let storage = firebase.storage();
+    let pathReference = storage.refFromURL(imageUrl);
+    storage
+      .child(imageUrl)
+      .getDownloadURL()
+      .then((url) => updateUrl(url));
+  }; */
+
   {
     type
       ? (card = product
-          .filter((data) => data.category == type)
+          .filter((data) => data.category === type)
           .map((data) => (
             <div key={Math.random() * 1000} className="col mb-4">
               <div className="card">
@@ -90,7 +102,7 @@ export const Home = () => {
 
   let signup = null;
 
-  if (!localStorage.getItem("token") || localStorage.getItem("userId")) {
+  if (!localStorage.getItem("token") || !localStorage.getItem("userId")) {
     signup = (
       <div>
         <Link className="navbar-brand" to="/signup">
