@@ -63,6 +63,7 @@ class Login extends Component {
           <div className="contanier-sm shadow-lg p-3 mb-5 bg-white rounded">
             <div className="p-3 mb-5">
               <form>
+                <h6 class="head">Enter your email</h6>
                 <input
                   type="email"
                   className="form-control"
@@ -74,7 +75,8 @@ class Login extends Component {
                   value={this.state.email}
                 />
                 <br></br>
-                <br></br>
+                {/* <br></br> */}
+                <h6 class="head">Enter your password</h6>
                 <input
                   name="password"
                   type="password"
@@ -92,7 +94,7 @@ class Login extends Component {
                 <br></br>
                 <br></br>
 
-                <Link to="/signup">new user? Signup here!</Link>
+                <Link to="/signup">New user? Signup here!</Link>
               </form>
 
               <p className="para">{this.state.errMessage}</p>
