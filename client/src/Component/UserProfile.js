@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./UserProfile.css";
 import Axios from "axios";
 export const UserProfile = () => {
@@ -10,7 +11,7 @@ export const UserProfile = () => {
   useEffect(() => {
     requestList();
     requestUserDetails();
-  }, []);
+  }, [product]);
 
   /* 
 requests userdetail using token auth passed in the header
@@ -52,11 +53,15 @@ as head
   };
 
   const deletehandler = async (key) => {
-    await Axios.delete(`/api/item/list/${key}`, {
-      headers: localStorage.getItem("token").toString(),
+    const head = {
+      "x-auth-token": localStorage.getItem("token").toString(),
+    };
+    await Axios.delete(`/api/item/${key}`, {
+      headers: head,
     })
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
+    console.log(key);
   };
 
   /* 
@@ -104,6 +109,7 @@ on to a div component
           <p>{phone}</p>
           <p>{email}</p>
         </div>
+        <Link to="/form">Add items</Link>
       </div>
       {productList}
     </div>
