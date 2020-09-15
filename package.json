@@ -4,6 +4,7 @@
   "description": "Olx for SRMIST",
   "main": "index.js",
   "scripts": {
+    "Build":"npm run build",
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",

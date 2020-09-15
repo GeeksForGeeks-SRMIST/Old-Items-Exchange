@@ -1,6 +1,6 @@
 .container-fluid {
   justify-content: center;
-  padding : 3% 5%;
+  padding: 3% 5%;
 }
 body {
   /* background-color: #bbe1fa;
@@ -17,23 +17,42 @@ body {
 } */
 
 @-webkit-keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @-moz-keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 @keyframes AnimationName {
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
-.money{
+
+.money {
   pointer-events: none;
-  padding:5%;
+  padding: 5%;
   position: relative;
   border-color: #07689f;
   border-width: 2px;
@@ -41,122 +60,127 @@ body {
   z-index: 99;
   background-color: #fff;
 }
-.desc{
+/* .carousels-control {
+  width: 50vw;
+  height: 200px;
+  float: bottom;
+  margin-bottom:
+} */
+.desc {
   padding: 5%;
-  padding-left:12%;
+  padding-left: 12%;
   position: relative;
-  left:-10%;
+  left: -10%;
   width: 79%;
-  border-radius: 2%; 
+  border-radius: 2%;
   border-color: #07689f;
   border-width: 2px;
   z-index: 0;
   border-radius: 36px;
 }
-.card{
+.card {
   /* padding : 20px; */
   border-radius: 5%;
   margin: 10px auto;
   border-width: 0;
 }
-.card-body{
+.card-body {
   color: #07689f !important;
 }
-.component{
-  margin-right:10px;
-  width:100%;
+.component {
+  margin-right: 10px;
+  width: 100%;
   /* background-color: #000; */
 }
-nav a{
-  color:#bbb;
+nav a {
+  color: #bbb;
 }
-nav a:hover{
-  color:#eee;
-  font-size:105%;
+nav a:hover {
+  color: #eee;
+  font-size: 105%;
   transition-duration: 0.15s;
   transition-timing-function: ease-in;
   text-decoration: none;
 }
-.nav-item{
-  margin:auto 10px;
+.nav-item {
+  margin: auto 10px;
 }
-.capitalize{
-  text-transform:capitalize;
+.capitalize {
+  text-transform: capitalize;
 }
-.location{
-  text-transform:uppercase;
-  text-align:right;
+.location {
+  text-transform: uppercase;
+  text-align: right;
 }
-p{
+p {
   color: #07689f !important;
-  margin:15px auto;
+  margin: 15px auto;
 }
-.content{
-  padding :1% 2%;
-} 
-.card-img-top{
+.content {
+  padding: 1% 2%;
+}
+.card-img-top {
   /* height:200px; */
   /* z-index: 1; */
   border-top-right-radius: 5%;
   border-top-left-radius: 5%;
-}   
-.card:hover{
 }
-@media (min-width:1200px ){
-  .card-img-top{
+.card:hover {
+}
+@media (min-width: 1200px) {
+  .card-img-top {
     height: 275px !important;
   }
-  .cards{
+  .cards {
     width: 23%;
     margin: auto 1%;
     display: inline-block;
   }
 }
-@media (max-width:1200px ){
-  .nav-item{
+@media (max-width: 1200px) {
+  .nav-item {
     display: block;
     text-align: center;
-    margin: auto 10px; 
+    margin: auto 10px;
   }
-  .card-img-top{
+  .card-img-top {
     height: 250px !important;
   }
-  .cards{
-    display: inline-block ;
+  .cards {
+    display: inline-block;
     width: 31%;
     margin: auto 1%;
   }
 }
-@media (max-width:900px){
-  .cards{
+@media (max-width: 900px) {
+  .cards {
     width: 48%;
     margin: auto 1%;
   }
-  .nav-item{
-    margin:10px 10px 5px;
+  .nav-item {
+    margin: 10px 10px 5px;
   }
 }
-@media (max-width:500px ){
-  .card-img-top{
+@media (max-width: 500px) {
+  .card-img-top {
     height: 250px;
   }
-  .cards{
+  .cards {
     width: 90%;
     margin: auto 5%;
   }
 }
-@media (max-width:400px ){
-  .card-img-top{
+@media (max-width: 400px) {
+  .card-img-top {
     height: 225px;
   }
 }
 @media (max-width: 360px) {
-  .card-img-top{
+  .card-img-top {
     height: 200px;
   }
-  .desc{
-    width:75%;
-    font-size:95%;
+  .desc {
+    width: 75%;
+    font-size: 95%;
   }
 }
-
