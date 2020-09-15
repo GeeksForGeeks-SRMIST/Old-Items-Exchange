@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import "./form.css";
+import Spinner from "./spinner";
 import Select from "react-select";
 import { header } from "express-validator";
 import firebase, { storage } from "../config/fire";
@@ -19,6 +20,8 @@ const FormEntry = () => {
   const [category, updateCategory] = useState("");
   const [image, updateImage] = useState(null);
   const [path, updatePath] = useState("");
+  const [loader, updateLoader] = useState(false);
+  const [spinner, updateSpinner] = useState(false);
 
   const productName = (e) => {
     e.preventDefault();
@@ -57,6 +60,7 @@ const FormEntry = () => {
 
   const imageSaveHandler = (e) => {
     e.preventDefault();
+    updateSpinner(true);
     const uploadTask = storage.child(`images/${image.name}`).put(image);
     uploadTask.on(
       "state_changed",
@@ -78,7 +82,11 @@ const FormEntry = () => {
       () => {
         uploadTask.snapshot.ref
           .getDownloadURL()
-          .then((downloadURL) => updatePath(downloadURL));
+          .then(
+            (downloadURL) => (
+              updatePath(downloadURL), updateLoader(true), updateSpinner(false)
+            )
+          );
       }
     );
   };
@@ -113,6 +121,26 @@ const FormEntry = () => {
         console.log(err);
       });
   };
+
+  let submit =
+    loader === true ? (
+      <button
+        className="btn btn-primary"
+        style={{ marginLeft: "178px" }}
+        type="submit"
+      >
+        Submit
+      </button>
+    ) : null;
+
+  let spinners =
+    spinner === true ? (
+      <Spinner></Spinner>
+    ) : (
+      <button className="btn btn-primary" onClick={imageSaveHandler}>
+        Upload
+      </button>
+    );
 
   const options = [
     { value: "Automobile", label: "Automobile" },
@@ -214,16 +242,8 @@ const FormEntry = () => {
                   type="file"
                   onChange={imageHandler}
                 ></input>
-                <button className="btn btn-primary" onClick={imageSaveHandler}>
-                  Upload
-                </button>
-                <button
-                  className="btn btn-primary"
-                  style={{ marginLeft: "178px" }}
-                  type="submit"
-                >
-                  Submit
-                </button>
+                {spinners}
+                {submit}
               </form>
             </div>
           </div>

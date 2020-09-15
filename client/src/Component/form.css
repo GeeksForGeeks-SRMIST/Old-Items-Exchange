@@ -16,6 +16,7 @@
 @media (min-width: 1025px) {
   .background-form {
     width: 100vw;
+    margin-left: 500px;
     height: 100vh;
   }
 }

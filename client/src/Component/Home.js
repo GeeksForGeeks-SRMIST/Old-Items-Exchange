@@ -19,6 +19,9 @@ export const Home = () => {
       .then((res) => updateProduct(res.data.items))
       .catch((err) => console.log(err));
   };
+
+  /* options created for react-select library which is used to filter products */
+
   const options = [
     { value: "Automobile", label: "Automobile" },
     { value: "Furniture", label: "Furniture" },
@@ -35,15 +38,7 @@ export const Home = () => {
     />
   );
   let card;
-
-  /*   let imageLoader = (imageUrl) => {
-    let storage = firebase.storage();
-    let pathReference = storage.refFromURL(imageUrl);
-    storage
-      .child(imageUrl)
-      .getDownloadURL()
-      .then((url) => updateUrl(url));
-  }; */
+  /* implementation of each product cards by using map  */
 
   {
     type
@@ -124,6 +119,7 @@ export const Home = () => {
           </div>
         )));
   }
+
   let extras = null;
   useEffect((e) => {
     userItem();
@@ -146,6 +142,22 @@ export const Home = () => {
 
   let signup = null;
 
+  /* to load each image from database to carousel */
+
+  let image = product.map((res) => (
+    <div key={res._id} className="carousel-item">
+      <img
+        src={
+          res.images[0] ||
+          "https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
+        }
+        className="d-block w-100"
+        alt="..."
+      ></img>
+    </div>
+  ));
+  /* to authorise user using tokens */
+
   if (!localStorage.getItem("token") || !localStorage.getItem("userId")) {
     signup = (
       <li>
@@ -155,8 +167,14 @@ export const Home = () => {
       </li>
     );
   }
+
+  /* main return function */
   return (
+<<<<<<< HEAD
     <Fragment>
+=======
+    <div>
+>>>>>>> 00b8bb8efb25952b45d0380b85242d644f2d3836
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <a className="navbar-brand" href="#">
           Navbar
@@ -194,6 +212,11 @@ export const Home = () => {
         </div>
       </nav>
 
+<<<<<<< HEAD
+=======
+      {/* carousel implementation */}
+
+>>>>>>> 00b8bb8efb25952b45d0380b85242d644f2d3836
       <div className="container-fluid">
         <div>
           <div
@@ -204,6 +227,7 @@ export const Home = () => {
             <div className="carousel-inner">
               <div className="carousel-item active">
                 <img
+<<<<<<< HEAD
                   src="https://cdn.pixabay.com/photo/2015/09/02/12/25/bmw-918408_1280.jpg"
                   className="d-block w-100"
                   alt="..."
@@ -211,11 +235,14 @@ export const Home = () => {
               </div>
               <div className="carousel-item">
                 <img
+=======
+>>>>>>> 00b8bb8efb25952b45d0380b85242d644f2d3836
                   src="https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
                   className="d-block w-100"
                   alt="..."
                 ></img>
               </div>
+<<<<<<< HEAD
               <div className="carousel-item">
                 <img
                   src="https://cdn.pixabay.com/photo/2015/09/02/12/25/bmw-918408_1280.jpg"
@@ -223,6 +250,9 @@ export const Home = () => {
                   alt="..."
                 ></img>
               </div>
+=======
+              {image}
+>>>>>>> 00b8bb8efb25952b45d0380b85242d644f2d3836
             </div>
             <a
               className="carousel-control-prev"
@@ -251,6 +281,11 @@ export const Home = () => {
             </a>
           </div>
         </div>
+<<<<<<< HEAD
+=======
+
+        {/*  */}
+>>>>>>> 00b8bb8efb25952b45d0380b85242d644f2d3836
         <h1 className="recomendation">Recommended</h1>
         <div className=" content">{card}</div>
       </div>
