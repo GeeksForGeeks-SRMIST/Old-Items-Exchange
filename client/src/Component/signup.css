@@ -8,47 +8,141 @@
 
   color: rgb(90, 89, 89);
 }
+.nav-link{
+  padding: 15px;
+}
 p {
   color: rgb(233, 72, 72);
 }
-@media (max-width: 480px) {
+.signup .row{
+  width: 100vw; 
+}
+.signup{
+  height: 100vh;
+  background: url(./img.jfif);
+  background-size: cover;
+}
+.signup .col-lg-3{
+  margin-left: 7%;
+  margin-top: 5%;
+  padding:1% 2%;
+  font-size: 90%;
+}
+.signup img{
+  /* margin:0% auto; */
+  width: 35vw;
+  margin-left: 35%;
+}
+.signup label{
+  width: 10%;
+  display: inline-block;
+  color: rgb(119, 2, 168);
+}
+.form-group{
+  color: rgb(119, 2, 168);
+}
+.form-group h3{
+  text-align: center;
+}
+.signup input{
+  display: inline-block;
+  margin: 3% 0;
+  width: 90%;
+  border-width:0px;
+  border-bottom-width: 1px;
+  border-radius: 0;
+  border-bottom-color:  rgb(119, 2, 168);
+  color: rgb(119, 2, 168);
+}
+.signup .btn{
+  margin : 1% 33%;
+  background-color: rgb(119, 2, 168);
+  border-width: 0;
+}
+.signup .col-lg-8{
+  padding:2% 0 0;
+}
+.signup .btn:hover{
+  background-color:rgb(175, 16, 243) ;
+}
+.mobSignup{
+  display: none;
+}
+@media (max-width:480px) {
   .nav {
     width: 100vw;
   }
-  .background {
-    width: 150vw;
-    height: 150vh;
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: none;
-    background-position: center center;
-    background-image: url("https://cdn.pixabay.com/photo/2015/10/05/17/16/kitchen-972934_1280.jpg");
+  .signup .col-lg-8{
+    display: none;
+  }
+  .mobSignup{
+    display: block;
+  }
+  .signup img{
+    width: 80vw;
+    margin:1vh 10vw 12vh;
+  }
+  .signup{
+    height: auto !important;
+    background-image: url('./WhatsApp Image 2020-09-18 at 17.35.32.jpeg');
+  }
+  .signup .form-group{
+    color:#fff;
+  }
+  .signup .card{
+    background-color: rgba(0, 0, 0, 0) !important;
+  }
+  .bg-white{
+    background-color: rgba(0, 0, 0, 0) !important;
+  }
+  .signup .row{
+    width: 100vw;;
+  }
+  .signup input{
+    color:#fff;
+    background-color: rgba(0, 0, 0, 0) !important;
+    border-bottom-color: #fff;
+  }
+  .signup .input::placeholder{
+    color:#fff;
+  }
+  .signup label{
+    color: #fff;
+  }
+  .signup .form-control:focus{
+    color:#fff;
+  }
+  .signup .form-control::placeholder{
+    color:#bbbbbb;
+  }
+  .signup .text-muted{
+    color:#bbbbbb !important;
   }
 }
-@media (min-width: 1025px) {
-  .nav {
-    width: 100vw;
-  }
-  .background {
-    width: 100vw;
-    height: 100vh;
-    background-repeat: none;
-    background-position: center center;
-    background-size: cover;
-    background-image: url("https://cdn.pixabay.com/photo/2015/10/05/17/16/kitchen-972934_1280.jpg");
+@media (max-width:430px){
+  .signup img{
+    width:80vw;
+    margin:1vh 10vw 15vh;
   }
 }
-
-@media (min-width: 481px) and (max-width: 1024px) {
-  .nav {
-    width: 100vw;
+@media (max-width:380px){
+  .signup img{
+    width: 80vw;
+    margin:5vh 10vw 18vh;
   }
-  .background {
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    background-repeat: none;
-    background-position: center center;
-    background-image: url("https://cdn.pixabay.com/photo/2015/10/05/17/16/kitchen-972934_1280.jpg");
+}
+@media (max-width:325px){
+  .signup img{
+    width: 80vw;
+    margin:5vh 10vw 23vh;
+  }
+  .signup .row{
+    margin-top: 20vh;
+  }
+}
+@media (max-width:275px){
+  .signup img{
+    width: 80vw;
+    margin:1vh 10vw 12vh;
   }
 }

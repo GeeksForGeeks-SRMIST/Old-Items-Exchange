@@ -1,10 +1,10 @@
 .container-fluid {
   justify-content: center;
-  padding: 3% 5%;
+  padding: 2% 5% 3%;
 }
 body {
-  /* background-color: #bbe1fa;
-  background-size: 100% 100%; */
+  background-color: #bbe1fa;
+  background-size: 100% 100%;
   color: #07689f;
 }
 /* #root{
@@ -15,6 +15,15 @@ body {
   -moz-animation: AnimationName 30s ease infinite;
   animation: AnimationName 30s ease infinite;
 } */
+
+.carousel-arrange {
+  position: static;
+  display: block;
+  width: 500px;
+}
+.carousel-display {
+  display: flex;
+}
 
 @-webkit-keyframes AnimationName {
   0% {
@@ -71,7 +80,7 @@ body {
   padding-left: 12%;
   position: relative;
   left: -10%;
-  width: 79%;
+  width: 77%;
   border-radius: 2%;
   border-color: #07689f;
   border-width: 2px;
@@ -86,11 +95,6 @@ body {
 }
 .card-body {
   color: #07689f !important;
-}
-.component {
-  margin-right: 10px;
-  width: 100%;
-  /* background-color: #000; */
 }
 nav a {
   color: #bbb;
@@ -125,16 +129,56 @@ p {
   border-top-right-radius: 5%;
   border-top-left-radius: 5%;
 }
-.card:hover {
+.css-g1d714-ValueContainer{
+  padding: 2px 100px 2px 8px !important;
+}
+.carousel-arrange{
+  width: 100vw;
+  margin:0;
+}
+.container{
+  margin:0;
+  max-width: 100vw;
+}
+#c1,#c2,#c3,#c4,#carouselExampleControls1,#carouselExampleControls2,#carouselExampleControls3,#carouselExampleControls4{
+  width:40vw !important;
+  margin: 1.5%;
+  display: inline-block;
+}
+.carousel-item > img{
+  height:45vh;
+}
+#c0 .col-lg-7 {
+  padding:2% 5%;
+}
+
+h1{
+  margin:0;
+}
+h2{
+  text-align: center;
+}
+#c0  img{
+  height:70vh;
+}
+.col-lg-7 > img{
+  width:100% !important;
+}
+.col-lg-4{
+  padding: 15% 0 0 !important;
+  text-align: center;
 }
 @media (min-width: 1200px) {
   .card-img-top {
     height: 275px !important;
   }
+  .desc{
+    width: 75%;
+  }
   .cards {
-    width: 23%;
-    margin: auto 1%;
     display: inline-block;
+    width: 31%;
+    margin: auto 1%;
   }
 }
 @media (max-width: 1200px) {
@@ -151,6 +195,10 @@ p {
     width: 31%;
     margin: auto 1%;
   }
+  .col-lg-4{
+    padding: 25% 0 0 !important;
+    text-align: center;
+  }
 }
 @media (max-width: 900px) {
   .cards {
@@ -161,6 +209,16 @@ p {
     margin: 10px 10px 5px;
   }
 }
+@media (max-width:600px){
+  #c1,#c2,#c3,#c4,#carouselExampleControls1,#carouselExampleControls2,#carouselExampleControls3,#carouselExampleControls4{
+    width:100% !important;
+    margin: 2% 0;
+    display: inline-block;
+  }
+  .desc{
+    width:74%;
+  }
+}
 @media (max-width: 500px) {
   .card-img-top {
     height: 250px;
@@ -169,10 +227,19 @@ p {
     width: 90%;
     margin: auto 5%;
   }
+  h2,h1{
+    margin: 2% auto;
+  }
+  .desc{
+    width:80%;
+  }
 }
 @media (max-width: 400px) {
   .card-img-top {
     height: 225px;
+  }
+  .desc{
+    width:77%;
   }
 }
 @media (max-width: 360px) {

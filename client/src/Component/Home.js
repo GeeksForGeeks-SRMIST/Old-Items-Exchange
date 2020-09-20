@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import Select from "react-select";
 import Axios from "axios";
 import "./home.css";
+import logo from "./4272140.jpg";
+import logo1 from "./6796.jpg";
+import logo2 from "./15256.jpg";
 export const Home = () => {
   const logout = () => {
     localStorage.removeItem("token");
@@ -156,6 +159,62 @@ export const Home = () => {
       ></img>
     </div>
   ));
+  let furniture = product
+    .filter((res) => res.category == "Furniture")
+    .map((res) => (
+      <div key={res._id} className="carousel-item">
+        <img
+          src={
+            res.images[0] ||
+            "https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
+          }
+          className="d-block w-100"
+          alt="..."
+        ></img>
+      </div>
+    ));
+  let automobile = product
+    .filter((res) => res.category == "Automobile")
+    .map((res) => (
+      <div key={res._id} className="carousel-item">
+        <img
+          src={
+            res.images[0] ||
+            "https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
+          }
+          className="d-block w-100"
+          alt="..."
+        ></img>
+      </div>
+    ));
+  let electronic_appliance = product
+    .filter((res) => res.category == "Electronic Appliances")
+    .map((res) => (
+      <div key={res._id} className="carousel-item">
+        <img
+          src={
+            res.images[0] ||
+            "https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
+          }
+          className="d-block w-100"
+          alt="..."
+        ></img>
+      </div>
+    ));
+  let gaming = product
+    .filter((res) => res.category == "Gaming Equipment")
+    .map((res) => (
+      <div key={res._id} className="carousel-item">
+        <img
+          src={
+            res.images[0] ||
+            "https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
+          }
+          className="d-block w-100"
+          alt="..."
+        ></img>
+      </div>
+    ));
   /* to authorise user using tokens */
 
   if (!localStorage.getItem("token") || !localStorage.getItem("userId")) {
@@ -170,11 +229,7 @@ export const Home = () => {
 
   /* main return function */
   return (
-<<<<<<< HEAD
-    <Fragment>
-=======
     <div>
->>>>>>> 00b8bb8efb25952b45d0380b85242d644f2d3836
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <a className="navbar-brand" href="#">
           Navbar
@@ -197,7 +252,7 @@ export const Home = () => {
                 <i className="fas fa-search"></i>
               </a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item nav-component">
               <div className="component">{MyComponent()}</div>
             </li>
 
@@ -212,13 +267,8 @@ export const Home = () => {
         </div>
       </nav>
 
-<<<<<<< HEAD
-=======
       {/* carousel implementation */}
-
->>>>>>> 00b8bb8efb25952b45d0380b85242d644f2d3836
-      <div className="container-fluid">
-        <div>
+      <div id="c0">
           <div
             id="carouselExampleControls"
             className="carousel slide"
@@ -226,42 +276,44 @@ export const Home = () => {
           >
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img
-<<<<<<< HEAD
-                  src="https://cdn.pixabay.com/photo/2015/09/02/12/25/bmw-918408_1280.jpg"
-                  className="d-block w-100"
-                  alt="..."
-                ></img>
+                <div class="row">
+                  <div class="col-md-7 col-lg-7">
+                    <img src={logo} />
+                  </div>
+                  <div class="col-md-4 col-lg-4">
+                      <h3>Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</h3>
+                  </div>
+                </div>
               </div>
-              <div className="carousel-item">
-                <img
-=======
->>>>>>> 00b8bb8efb25952b45d0380b85242d644f2d3836
-                  src="https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
-                  className="d-block w-100"
-                  alt="..."
-                ></img>
+              <div className="carousel-item ">
+                <div class="row">
+                  <div class="col-md-7 col-lg-7">
+                    <img src={logo1} />
+                  </div>
+                  <div class="col-md-4 col-lg-4">
+                      <h3>Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</h3>
+                  </div>
+                </div>
               </div>
-<<<<<<< HEAD
-              <div className="carousel-item">
-                <img
-                  src="https://cdn.pixabay.com/photo/2015/09/02/12/25/bmw-918408_1280.jpg"
-                  className="d-block w-100"
-                  alt="..."
-                ></img>
+              <div className="carousel-item ">
+                <div class="row">
+                  <div class="col-md-7 col-lg-7">
+                    <img src={logo2} />
+                  </div>
+                  <div class="col-md-4 col-lg-4">
+                      <h3>Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</h3>
+                  </div>
+                </div>
               </div>
-=======
-              {image}
->>>>>>> 00b8bb8efb25952b45d0380b85242d644f2d3836
             </div>
             <a
-              className="carousel-control-prev"
+              className="carousel-control-next"
               href="#carouselExampleControls"
               role="button"
-              data-slide="prev"
+              data-slide="next"
             >
               <span
-                className="carousel-control-prev-icon"
+                className="carousel-control-next-icon"
                 aria-hidden="true"
               ></span>
               <span className="sr-only"></span>
@@ -281,15 +333,199 @@ export const Home = () => {
             </a>
           </div>
         </div>
-<<<<<<< HEAD
-=======
+      <div className="container-fluid">
+        
 
         {/*  */}
->>>>>>> 00b8bb8efb25952b45d0380b85242d644f2d3836
         <h1 className="recomendation">Recommended</h1>
         <div className=" content">{card}</div>
+        <h1>Categories</h1>
+        <div className="carousel-display">
+        <div className="carousel-arrange">
+          <div className="container">
+            <div id="c1">
+              <h2>Furniture</h2>
+              <div
+                id="carouselExampleControls1"
+                className="carousel slide"
+                data-ride="carousel"
+              >
+                <div className="carousel-inner">
+                  <div className="carousel-item active">
+                    <img
+                      src="https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
+                      className="d-block w-100"
+                      alt="..."
+                    ></img>
+                  </div>
+                  {furniture}
+                </div>
+                <a
+                  className="carousel-control-next"
+                  href="#carouselExampleControls1"
+                  role="button"
+                  data-slide="next"
+                >
+                  <span
+                    className="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="sr-only"></span>
+                </a>
+
+                <a
+                  className="carousel-control-prev"
+                  href="#carouselExampleControls1"
+                  role="button"
+                  data-slide="prev"
+                >
+                  <span
+                    className="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="sr-only"></span>
+                </a>
+              </div>
+            </div>
+            <div id="c2">
+              <h2>Automobile</h2>
+              <div
+                id="carouselExampleControls2"
+                className="carousel slide"
+                data-ride="carousel"
+              >
+                <div className="carousel-inner">
+                  <div className="carousel-item active">
+                    <img
+                      src="https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
+                      className="d-block w-100"
+                      alt="..."
+                    ></img>
+                  </div>
+                  {automobile}
+                </div>
+                <a
+                  className="carousel-control-next"
+                  href="#carouselExampleControls2"
+                  role="button"
+                  data-slide="next"
+                >
+                  <span
+                    className="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="sr-only"></span>
+                </a>
+
+                <a
+                  className="carousel-control-prev"
+                  href="#carouselExampleControls2"
+                  role="button"
+                  data-slide="prev"
+                >
+                  <span
+                    className="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="sr-only"></span>
+                </a>
+              </div>
+            </div>
+            <div id="c3">
+              <h2>Electronic Appliances</h2>
+              <div
+                id="carouselExampleControls3"
+                className="carousel slide"
+                data-ride="carousel"
+              >
+                <div className="carousel-inner">
+                  <div className="carousel-item active">
+                    <img
+                      src="https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
+                      className="d-block w-100"
+                      alt="..."
+                    ></img>
+                  </div>
+                  {electronic_appliance}
+                </div>
+                <a
+                  className="carousel-control-next"
+                  href="#carouselExampleControls3"
+                  role="button"
+                  data-slide="next"
+                >
+                  <span
+                    className="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="sr-only"></span>
+                </a>
+
+                <a
+                  className="carousel-control-prev"
+                  href="#carouselExampleControls3"
+                  role="button"
+                  data-slide="prev"
+                >
+                  <span
+                    className="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="sr-only"></span>
+                </a>
+              </div>
+            </div>
+            <div id="c4">
+              <h2>Gaming Equipments</h2>
+              <div
+                id="carouselExampleControls4"
+                className="carousel slide"
+                data-ride="carousel"
+              >
+                <div className="carousel-inner">
+                  <div className="carousel-item active">
+                    <img
+                      src="https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
+                      className="d-block w-100"
+                      alt="..."
+                    ></img>
+                  </div>
+                  {gaming}
+                </div>
+                <a
+                  className="carousel-control-next"
+                  href="#carouselExampleControls4"
+                  role="button"
+                  data-slide="next"
+                >
+                  <span
+                    className="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="sr-only"></span>
+                </a>
+
+                <a
+                  className="carousel-control-prev"
+                  href="#carouselExampleControls4"
+                  role="button"
+                  data-slide="prev"
+                >
+                  <span
+                    className="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="sr-only"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </Fragment>
+      </div>
+      
+      
+    </div>
   );
 };
 export default Home;
