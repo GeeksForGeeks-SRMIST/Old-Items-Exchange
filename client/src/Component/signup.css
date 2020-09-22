@@ -68,7 +68,16 @@ p {
 .mobSignup{
   display: none;
 }
-@media (max-width:480px) {
+@media (max-width:1200px){
+  .signup .col-lg-3{
+    font-size: 80%;
+  }
+  .signup .col-lg-3 .btn{
+    width: 60%;
+    margin:5% 20% ;
+  }
+}
+@media (max-width:880px) {
   .nav {
     width: 100vw;
   }
@@ -119,6 +128,12 @@ p {
     color:#bbbbbb !important;
   }
 }
+@media (max-width:800px){
+  .signup img{
+    width:60vw;
+    margin:10vh 20vw 15vh;
+  }
+}
 @media (max-width:430px){
   .signup img{
     width:80vw;
@@ -134,15 +149,13 @@ p {
 @media (max-width:325px){
   .signup img{
     width: 80vw;
-    margin:5vh 10vw 23vh;
+    margin:5vh 10vw 25vh;
   }
   .signup .row{
     margin-top: 20vh;
   }
-}
-@media (max-width:275px){
-  .signup img{
-    width: 80vw;
-    margin:1vh 10vw 12vh;
+  .signup .btn{
+    width:40%;
+    margin : 1% 30%;
   }
 }
