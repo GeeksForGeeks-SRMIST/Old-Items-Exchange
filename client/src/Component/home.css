@@ -69,11 +69,11 @@ body {
   z-index: 99;
   background-color: #fff;
 }
-.seeMore{
+.seeMore {
   margin-top: 2%;
   text-align: center;
 }
-.seeMore button:hover{
+.seeMore button:hover {
   color: #0785ce;
 }
 /* .carousels-control {
@@ -136,43 +136,46 @@ p {
   border-top-right-radius: 5%;
   border-top-left-radius: 5%;
 }
-.component{
-  width:150px;
+.component {
+  width: 150px;
 }
-.carousel-arrange{
+.carousel-arrange {
   width: 100vw;
-  margin:0;
+  margin: 0;
 }
-.container{
-  margin:0px;
+.container {
+  margin: 0px;
   max-width: 100vw;
-  width:90vw;
+  width: 90vw;
 }
-#c1,#c2,#c3,#c4{
-  width:40vw !important;
+#c1,
+#c2,
+#c3,
+#c4 {
+  width: 40vw !important;
   margin: 1.5%;
   display: inline-block;
 }
-.carousel-item > img{
-  height:45vh;
+.carousel-item > img {
+  height: 45vh;
 }
 #c0 .col-lg-7 {
-  padding:2% 5%;
+  padding: 2% 5%;
 }
 
-h1{
-  margin:0;
+h1 {
+  margin: 0;
 }
-h2{
+h2 {
   text-align: center;
 }
-#c0  img{
-  height:70vh;
+#c0 img {
+  height: 70vh;
 }
-.col-lg-7 > img{
-  width:100% !important;
+.col-lg-7 > img {
+  width: 100% !important;
 }
-.col-lg-4{
+.col-lg-4 {
   padding: 15% 0 0 !important;
   text-align: center;
 }
@@ -180,7 +183,7 @@ h2{
   .card-img-top {
     height: 275px !important;
   }
-  .desc{
+  .desc {
     width: 75%;
   }
   .cards {
@@ -203,7 +206,7 @@ h2{
     width: 31%;
     margin: auto 1%;
   }
-  .col-lg-4{
+  .col-lg-4 {
     padding: 25% 0 0 !important;
     text-align: center;
   }
@@ -217,17 +220,28 @@ h2{
     margin: 10px 10px 5px;
   }
 }
-@media (max-width:600px){
-  #c1,#c2,#c3,#c4,#carouselExampleControls1,#carouselExampleControls2,#carouselExampleControls3,#carouselExampleControls4{
-    width:100% !important;
+@media (max-width: 600px) {
+  #c1,
+  #c2,
+  #c3,
+  #c4,
+  #carouselExampleControls1,
+  #carouselExampleControls2,
+  #carouselExampleControls3,
+  #carouselExampleControls4 {
+    width: 100% !important;
     margin: 2% 0;
     display: inline-block;
   }
-  .desc{
-    width:74%;
+  .desc {
+    width: 74%;
   }
 }
 @media (max-width: 500px) {
+  .component {
+    width: 100%;
+  }
+
   .card-img-top {
     height: 250px;
   }
@@ -235,19 +249,20 @@ h2{
     width: 90%;
     margin: auto 5%;
   }
-  h2,h1{
+  h2,
+  h1 {
     margin: 2% auto;
   }
-  .desc{
-    width:79%;
+  .desc {
+    width: 79%;
   }
 }
 @media (max-width: 400px) {
   .card-img-top {
     height: 225px;
   }
-  .desc{
-    width:77%;
+  .desc {
+    width: 77%;
   }
 }
 @media (max-width: 360px) {
