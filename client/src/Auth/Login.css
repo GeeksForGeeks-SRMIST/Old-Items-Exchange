@@ -1,51 +1,210 @@
-.container-sm {
-  padding-top: 220px;
-  height: 500px;
-  width: 500px;
-  float: left;
-  padding:100px;
+.background {
+  height: 700px;
+  background-image: url("https://cdn.pixabay.com/photo/2015/10/05/17/16/kitchen-972934_1280.jpg ");
 }
-.head{
-  
+.image1 .nav a:hover{
+  color: #fff;
 }
-.image1 {
-  width: 100vw;
-  height: 100vh;
-  background-image: url(bg.jpeg);
+.image1 h3{
+  color: rgb(119, 2, 168);
+  text-align: center;
 }
-.para {
+.nav-link {
+  font-size: 25px;
+  padding-bottom: 45px;
+  color: rgb(90, 89, 89);
+}
+
+.nav-link{
+  padding: 15px;
+}
+p {
   color: rgb(233, 72, 72);
 }
-@media (max-width: 480px) {
-  .image1 {
-    width: 150vw;
-    height: 150vh;
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: none;
-    background-position: center center;
+.image1 .row{
+  width: 100vw; 
+}
+.image1{
+  height: 100vh;
+  background: url(./img.jfif);
+  background-size: cover;
+}
+.image1 .col-lg-3{
+  margin-left: 7%;
+  margin-top: 10%;
+  margin-bottom: auto;
+  padding:3% 2% 1%;
+  font-size: 90%;
+}
+.image1 .col-lg-3 a{
+  margin-top: 4%;
+}
+.image1 img{
+  /* margin:0% auto; */
+  width: 36vw;
+  margin-left: 38%;
+}
+.image1 .col-lg-3 .btn{
+  margin: 6% 30%;
+  width: 40%;
+}
+.image1 label{
+  width: 10%;
+  display: inline-block;
+  color: rgb(119, 2, 168);
+}
+.form-group{
+  color: rgb(119, 2, 168);
+}
+.image1 input:focus{
+  color: rgb(119, 2, 168);
+}
+.form-group h3{
+  text-align: center;
+}
+.image1 input{
+  display: inline-block;
+  margin: 3% 0;
+  width: 90%;
+  border-width:0px;
+  border-bottom-width: 1px;
+  border-radius: 0;
+  border-bottom-color:  rgb(119, 2, 168);
+  color: rgb(119, 2, 168);
+}
+.image1 .btn{
+  margin : 1% 33%;
+  background-color: rgb(119, 2, 168);
+  border-width: 0;
+}
+.image1 .col-lg-8{
+  padding:2% 0 0;
+}
+.image1 .btn:hover{
+  background-color:rgb(175, 16, 243) ;
+}
+.mobSignup{
+  display: none;
+}
+@media (max-width:1200px){
+  .image1 .col-lg-3{
+    font-size: 80%;
+  }
+  .image1 img{
+    /* margin:0% auto; */
+    width: 40vw;
+    margin-left: 38%;
+  }
+  .image1 .col-lg-3 .btn{
+    width: 60%;
+    margin:5% 20% ;
+  }
+  .image1 .col-lg-3 a{
+    font-size:110% ;
   }
 }
-@media (min-width: 1025px) {
-  .image1 {
+@media (max-width:880px) {
+  .nav {
     width: 100vw;
-    height: 100vh;
-    background-repeat: none;
-    background-position: center center;
-    background-size: cover;
-    background-image: url(bg.jpeg);
-    background-size: cover;
+  }
+  .image1 h3{
+    color: #fff;
+    text-align: center;
+  }
+  .image1 .col-lg-8{
+    display: none;
+  }
+  .mobSignup{
+    display: block;
+  }
+  .image1 img{
+    width: 80vw;
+    margin:1vh 10vw 10vh;
+  }
+  .image1{
+    width: 100vw;
+    height: auto !important;
+    background-image: url('./WhatsApp\ Image\ 2020-09-18\ at\ 17.35.32.jpeg');
+  }
+  .image1 .form-group{
+    color:#fff;
+  }
+  .image1 .card{
+    background-color: rgba(0, 0, 0, 0) !important;
+  }
+  .bg-white{
+    background-color: rgba(0, 0, 0, 0) !important;
+  }
+  .image1 .row{
+    width: 100vw;;
+  }
+  .image1 input{
+    color:#fff;
+    background-color: rgba(0, 0, 0, 0) !important;
+    border-bottom-color: #fff;
+  }
+  .image1 .input::placeholder{
+    color:#fff;
+  }
+  .image1 label{
+    color: #fff;
+  }
+  .image1 .form-control:focus{
+    color:#fff;
+  }
+  .image1 .form-control::placeholder{
+    color:#bbbbbb;
+  }
+  .image1 .text-muted{
+    color:#bbbbbb !important;
   }
 }
-
-@media (min-width: 481px) and (max-width: 1024px) {
-  .image1 {
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    background-repeat: none;
-    background-position: center center;
-    background-image: url(bg.jpeg);
-
+@media (max-width:800px){
+  .signup img{
+    width:80vw;
+    margin:6vh 10vw 5vh;
+  }
+}
+@media (max-width:430px){
+  .image1 img{
+    width:70vw;
+    margin:1vh 15vw 10vh;
+  }
+  .image1 .row{
+    padding-bottom: 5vh;
+  }
+  .image1 .col-lg-3 .btn {
+    width: 60%;
+    margin: 8% 20%;
+  }
+}
+@media (max-width:380px){
+  .image1 img{
+    width: 70vw;
+    margin:3vh 17.5vw 5vh;
+  }
+  .image1 .col-lg-3 .btn {
+    width: 60%;
+    margin: 8% 20%;
+  }
+  .image1 .row{
+    padding-bottom: 5vh;
+  }
+}
+@media (max-width:325px){
+  .image1 img{
+    width: 70vw;
+    margin:1vh 15vw 5vh;
+  }
+  .image1 .row{
+    padding-bottom: 5vh;
+  }
+  .image1 .btn{
+    width:40%;
+    margin : 1% 30%;
+  }
+  .image1 .col-lg-3 .btn {
+    width: 60%;
+    margin: 8% 20%;
   }
 }

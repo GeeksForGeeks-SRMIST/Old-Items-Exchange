@@ -3,7 +3,7 @@ import { Redirect, Link } from "react-router-dom";
 
 import Home from "./Home";
 import "./signup.css";
-import img from "./cart.png";
+import img from "./cart-removebg-preview.png";
 import img1 from './WhatsApp Image 2020-09-18 at 17.35.32.jpeg';
 import Axios from "axios";
 import { localsName } from "ejs";
@@ -56,13 +56,6 @@ class Signup extends Component {
       <div className='signup'>
         <div>
           <ul className="nav bg-dark justify-content-center">
-            <li className="nav-item">
-              {/* <img
-                      src={
-                      style={{ justifyContent: "right" }}
-                      className="image"
-                    ></img> */}
-            </li>
             <li className="nav-item">
               <Link to="/" className="nav-link active">
                 Home

@@ -139,7 +139,7 @@ export const Home = () => {
         <Link className="nav-item" onClick={logout}>
           Logout
         </Link>
-      </li>
+      </li> 
     );
   }
 
@@ -269,287 +269,167 @@ export const Home = () => {
 
       {/* carousel implementation */}
       <div id="c0">
-        <div
-          id="carouselExampleControls"
-          className="carousel slide"
-          data-ride="carousel"
-        >
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <div class="row">
-                <div class="col-md-7 col-lg-7">
-                  <img src={logo} />
-                </div>
-                <div class="col-md-4 col-lg-4">
-                  <h3>
-                    Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem
-                    IpsumLorem IpsumLorem IpsumLorem Ipsum
-                  </h3>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item ">
-              <div class="row">
-                <div class="col-md-7 col-lg-7">
-                  <img src={logo1} />
-                </div>
-                <div class="col-md-4 col-lg-4">
-                  <h3>
-                    Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem
-                    IpsumLorem IpsumLorem IpsumLorem Ipsum
-                  </h3>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item ">
-              <div class="row">
-                <div class="col-md-7 col-lg-7">
-                  <img src={logo2} />
-                </div>
-                <div class="col-md-4 col-lg-4">
-                  <h3>
-                    Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem
-                    IpsumLorem IpsumLorem IpsumLorem Ipsum
-                  </h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          <a
-            className="carousel-control-next"
-            href="#carouselExampleControls"
-            role="button"
-            data-slide="next"
+          <div
+            id="carouselExampleControls"
+            className="carousel slide"
+            data-ride="carousel"
+            data-interval="7000"
           >
-            <span
-              className="carousel-control-next-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="sr-only"></span>
-          </a>
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <div class="row">
+                  <div class="col-md-7 col-lg-7">
+                    <img src={logo} />
+                  </div>
+                  <div class="col-md-4 col-lg-4">
+                      <h3>Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</h3>
+                  </div>
+                </div>
+              </div>
+              <div className="carousel-item ">
+                <div class="row">
+                  <div class="col-md-7 col-lg-7">
+                    <img src={logo1} />
+                  </div>
+                  <div class="col-md-4 col-lg-4">
+                      <h3>Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</h3>
+                  </div>
+                </div>
+              </div>
+              <div className="carousel-item ">
+                <div class="row">
+                  <div class="col-md-7 col-lg-7">
+                    <img src={logo2} />
+                  </div>
+                  <div class="col-md-4 col-lg-4">
+                      <h3>Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a
+              className="carousel-control-next"
+              href="#carouselExampleControls"
+              role="button"
+              data-slide="next"
+            >
+              <span
+                className="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="sr-only"></span>
+            </a>
 
-          <a
-            className="carousel-control-prev"
-            href="#carouselExampleControls"
-            role="button"
-            data-slide="prev"
-          >
-            <span
-              className="carousel-control-prev-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="sr-only"></span>
-          </a>
+            <a
+              className="carousel-control-prev"
+              href="#carouselExampleControls"
+              role="button"
+              data-slide="prev"
+            >
+              <span
+                className="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="sr-only"></span>
+            </a>
+          </div>
         </div>
-      </div>
       <div className="container-fluid">
+        
+
         {/*  */}
         <h1 className="recomendation">Recommended</h1>
         <div className=" content">{card}</div>
         <h1>Categories</h1>
         <div className="carousel-display">
-          <div className="carousel-arrange">
-            <div className="container">
-              <div id="c1">
-                <h2>Furniture</h2>
-                <div
-                  id="carouselExampleControls1"
-                  className="carousel slide"
-                  data-ride="carousel"
-                >
-                  <div className="carousel-inner">
-                    <div className="carousel-item active">
-                      <img
-                        src="https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
-                        className="d-block w-100"
-                        alt="..."
-                      ></img>
-                    </div>
-                    {furniture}
+        <div className="carousel-arrange">
+          <div className="container">
+            <div id="c1">
+              <h2>Furniture</h2>
+              <div
+                id="carouselExampleControls1"
+                className="carousel slide"
+                data-ride="carousel"
+                data-interval="4700"
+              >
+                <div className="carousel-inner">
+                  <div className="carousel-item active">
+                    <img
+                      src="https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
+                      className="d-block w-100"
+                      alt="..."
+                    ></img>
                   </div>
-                  <a
-                    className="carousel-control-next"
-                    href="#carouselExampleControls1"
-                    role="button"
-                    data-slide="next"
-                  >
-                    <span
-                      className="carousel-control-next-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span className="sr-only"></span>
-                  </a>
-
-                  <a
-                    className="carousel-control-prev"
-                    href="#carouselExampleControls1"
-                    role="button"
-                    data-slide="prev"
-                  >
-                    <span
-                      className="carousel-control-prev-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span className="sr-only"></span>
-                  </a>
+                  {furniture}
                 </div>
-                <h4 className="seeMore">
-                  <button>
-                    See More <i class="fas fa-arrow-circle-right"></i>
-                  </button>
-                </h4>
               </div>
-              <div id="c2">
-                <h2>Automobile</h2>
-                <div
-                  id="carouselExampleControls2"
-                  className="carousel slide"
-                  data-ride="carousel"
-                >
-                  <div className="carousel-inner">
-                    <div className="carousel-item active">
-                      <img
-                        src="https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
-                        className="d-block w-100"
-                        alt="..."
-                      ></img>
-                    </div>
-                    {automobile}
+            </div>
+            <div id="c2">
+              <h2>Automobile</h2>
+              <div
+                id="carouselExampleControls2"
+                className="carousel slide"
+                data-ride="carousel"
+                data-interval="4800"
+              >
+                <div className="carousel-inner">
+                  <div className="carousel-item active">
+                    <img
+                      src="https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
+                      className="d-block w-100"
+                      alt="..."
+                    ></img>
                   </div>
-                  <a
-                    className="carousel-control-next"
-                    href="#carouselExampleControls2"
-                    role="button"
-                    data-slide="next"
-                  >
-                    <span
-                      className="carousel-control-next-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span className="sr-only"></span>
-                  </a>
-
-                  <a
-                    className="carousel-control-prev"
-                    href="#carouselExampleControls2"
-                    role="button"
-                    data-slide="prev"
-                  >
-                    <span
-                      className="carousel-control-prev-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span className="sr-only"></span>
-                  </a>
+                  {automobile}
                 </div>
-                <h4 className="seeMore">
-                  <button>
-                    See More <i class="fas fa-arrow-circle-right"></i>
-                  </button>
-                </h4>
               </div>
-              <div id="c3">
-                <h2>Electronic Appliances</h2>
-                <div
-                  id="carouselExampleControls3"
-                  className="carousel slide"
-                  data-ride="carousel"
-                >
-                  <div className="carousel-inner">
-                    <div className="carousel-item active">
-                      <img
-                        src="https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
-                        className="d-block w-100"
-                        alt="..."
-                      ></img>
-                    </div>
-                    {electronic_appliance}
+            </div>
+            <div id="c3">
+              <h2>Electronic Appliances</h2>
+              <div
+                id="carouselExampleControls3"
+                className="carousel slide"
+                data-ride="carousel"
+                data-interval="4900"
+              >
+                <div className="carousel-inner">
+                  <div className="carousel-item active">
+                    <img
+                      src="https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
+                      className="d-block w-100"
+                      alt="..."
+                    ></img>
                   </div>
-                  <a
-                    className="carousel-control-next"
-                    href="#carouselExampleControls3"
-                    role="button"
-                    data-slide="next"
-                  >
-                    <span
-                      className="carousel-control-next-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span className="sr-only"></span>
-                  </a>
-
-                  <a
-                    className="carousel-control-prev"
-                    href="#carouselExampleControls3"
-                    role="button"
-                    data-slide="prev"
-                  >
-                    <span
-                      className="carousel-control-prev-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span className="sr-only"></span>
-                  </a>
+                  {electronic_appliance}
                 </div>
-                <h4 className="seeMore">
-                  <button>
-                    See More <i class="fas fa-arrow-circle-right"></i>
-                  </button>
-                </h4>
               </div>
-              <div id="c4">
-                <h2>Gaming Equipments</h2>
-                <div
-                  id="carouselExampleControls4"
-                  className="carousel slide"
-                  data-ride="carousel"
-                >
-                  <div className="carousel-inner">
-                    <div className="carousel-item active">
-                      <img
-                        src="https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
-                        className="d-block w-100"
-                        alt="..."
-                      ></img>
-                    </div>
-                    {gaming}
+            </div>
+            <div id="c4">
+              <h2>Gaming Equipments</h2>
+              <div
+                id="carouselExampleControls4"
+                className="carousel slide"
+                data-ride="carousel"
+                data-interval="5000"
+              >
+                <div className="carousel-inner">
+                  <div className="carousel-item active">
+                    <img
+                      src="https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
+                      className="d-block w-100"
+                      alt="..."
+                    ></img>
                   </div>
-                  <a
-                    className="carousel-control-next"
-                    href="#carouselExampleControls4"
-                    role="button"
-                    data-slide="next"
-                  >
-                    <span
-                      className="carousel-control-next-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span className="sr-only"></span>
-                  </a>
-
-                  <a
-                    className="carousel-control-prev"
-                    href="#carouselExampleControls4"
-                    role="button"
-                    data-slide="prev"
-                  >
-                    <span
-                      className="carousel-control-prev-icon"
-                      aria-hidden="true"
-                    ></span>
-                    <span className="sr-only"></span>
-                  </a>
+                  {gaming}
                 </div>
-                <h4 className="seeMore">
-                  <button>
-                    See More <i class="fas fa-arrow-circle-right"></i>
-                  </button>
-                </h4>
               </div>
             </div>
           </div>
         </div>
       </div>
+      </div>
+      
+      
     </div>
   );
 };

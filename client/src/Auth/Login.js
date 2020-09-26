@@ -2,6 +2,8 @@ import React, { Component, useEffect } from "react";
 import { Route, Redirect, Link } from "react-router-dom";
 
 import "./Login.css";
+import imgB from "./WhatsApp Image 2020-09-07 at 11.17.14.jpeg";
+import img from "./cart-removebg-preview.png";
 import Axios from "axios";
 class Login extends Component {
   constructor(props) {
@@ -59,24 +61,45 @@ class Login extends Component {
     if (this.state.valid) return <Redirect to="/"></Redirect>;
     return (
       <div className="image1">
-        <div className="container-sm">
-          <div className="contanier-sm shadow-lg p-3 mb-5 bg-white rounded">
-            <div className="p-3 mb-5">
+        <div>
+          <ul className="nav bg-dark justify-content-center">
+            <li className="nav-item">
+              {/* <img
+                      src={
+                      style={{ justifyContent: "right" }}
+                      className="image"
+                    ></img> */}
+            </li>
+            <li className="nav-item">
+              <Link to="/" className="nav-link active">
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/signup" className="nav-link active">
+                Signup
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <img src={img} className='mobSignup'/>
+        <div className="row">
+          <div className="desk col-lg-3 login bg-white rounded">
+            
+              <h3>Log-In</h3>
               <form>
-                <h6 class="head">Enter your email</h6>
+                <label><i className="fas fa-envelope fa-lg"></i></label> 
                 <input
                   type="email"
                   className="form-control"
                   aria-describedby="emailHelp"
                   id="email"
                   name="email"
-                  placeholder="Email"
+                  placeholder="Email-Address"
                   onChange={this.handleChange}
                   value={this.state.email}
                 />
-                <br></br>
-                {/* <br></br> */}
-                <h6 class="head">Enter your password</h6>
+                <label><i className="fas fa-key fa-lg"></i></label> 
                 <input
                   name="password"
                   type="password"
@@ -87,18 +110,16 @@ class Login extends Component {
                   placeholder="Password"
                   value={this.state.password}
                 />
-                <br></br>
                 <button onClick={this.login} className="btn btn-primary">
-                  Login
+                  Login&nbsp;&nbsp;<i className="fas fa-sign-in-alt"></i>
                 </button>
-                <br></br>
-                <br></br>
-
-                <Link to="/signup">New user? Signup here!</Link>
+                <Link to="/signup">New User? Signup here!</Link>
               </form>
 
               <p className="para">{this.state.errMessage}</p>
-            </div>
+          </div>         
+        <div className='col-lg-8'>
+            <img src={img} className='signupImg'/>
           </div>
         </div>
       </div>

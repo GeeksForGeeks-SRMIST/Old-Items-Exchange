@@ -8,6 +8,15 @@
 
   color: rgb(90, 89, 89);
 }
+.signup .nav a:hover{
+  color: #fff;
+}
+.signup input:focus{
+  color: rgb(119, 2, 168);
+}
+.image1 .nav a:hover{
+  color: #fff;
+}
 .nav-link{
   padding: 15px;
 }
@@ -30,8 +39,8 @@ p {
 }
 .signup img{
   /* margin:0% auto; */
-  width: 35vw;
-  margin-left: 35%;
+  width: 36vw;
+  margin-left: 38%;
 }
 .signup label{
   width: 10%;
@@ -76,6 +85,14 @@ p {
     width: 60%;
     margin:5% 20% ;
   }
+  .signup img{
+    /* margin:0% auto; */
+    width: 40vw;
+    margin-left: 38%;
+  }
+  .signup .col-lg-3{
+    margin-top: 2%;
+  }
 }
 @media (max-width:880px) {
   .nav {
@@ -86,10 +103,6 @@ p {
   }
   .mobSignup{
     display: block;
-  }
-  .signup img{
-    width: 80vw;
-    margin:1vh 10vw 12vh;
   }
   .signup{
     height: auto !important;
@@ -130,26 +143,27 @@ p {
 }
 @media (max-width:800px){
   .signup img{
-    width:60vw;
-    margin:10vh 20vw 15vh;
+    width:80vw;
+    margin:6vh 10vw 10vh;
   }
 }
+
 @media (max-width:430px){
   .signup img{
     width:80vw;
-    margin:1vh 10vw 15vh;
+    margin:1vh 10vw 28vh;
   }
 }
 @media (max-width:380px){
   .signup img{
     width: 80vw;
-    margin:5vh 10vw 18vh;
+    margin:5vh 10vw 25vh;
   }
 }
 @media (max-width:325px){
   .signup img{
     width: 80vw;
-    margin:5vh 10vw 25vh;
+    margin:5vh 10vw 27vh;
   }
   .signup .row{
     margin-top: 20vh;
