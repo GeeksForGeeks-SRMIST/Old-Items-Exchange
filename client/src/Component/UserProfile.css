@@ -1,66 +1,120 @@
-@media (max-width: 480px) {
-  .contain-box {
-    text-align: center;
-    margin-right: 10px;
-    margin-left: 50px;
-    margin-top: 50px;
-    width: 105vw;
-    height: 55vh;
+body{
+  width: 100vw;
+  overflow-x: hidden;
+}
+.userProfile .nav-item:last-child{
+  margin-right: 20px;
+}
+.userContent .Link{
+  color: #fff;
+}
+.userContent .Link:hover{
+  color: #fafafa;
+  text-decoration: none;
+}
+.userContent .Details{
+  text-transform: capitalize;
+  text-align: center;
+}
+.userContent .btn{
+  border-top-left-radius: 0% !important;
+  border-top-right-radius: 0% !important;
+}
+.userDetails .col-lg-1{
+  text-align: center;
+}
+.userDetails.card-body .col-lg-2{
+  font-size: 6rem;
+  text-align: center;
+}
+.userContent .Details p:last-child{
+  text-transform: none;
+}
+.userDetails h2{
+  text-align: justify;
+}
+.userDetails{
+  text-align: justify;
+}
+.userContent .Details{
+  margin-bottom: 5%;
+}
+.userContent{
+  padding: 3%;
+}
+.userContent .prCard{
+  width: 30%;
+  text-transform: capitalize;
+  display: inline-block;
+  margin: 1.5%;
+}
+.userContent .prCard img{
+  width: 100%;
+  height: 33vh;
+  border-bottom-left-radius: 0% !important;
+  border-bottom-right-radius: 0% !important;
+}
+.userContent .btn{
+  border-top-left-radius: 0% !important;
+  border-top-right-radius: 0% !important; 
+  border-radius: 16px ;
+}
+.userContent .rounded{
+  border-radius: 16px !important;
+}
+.userContent .location{
+  font-size: 115%;
+  margin-top: 5%;
+}
+i{
+  font-size: 120%;
+}
+i.fa-home{
+  font-size: 150%;
+}
+@media (max-width:1100px){
+  .userContent .prCard{
+    width: 42%;
+    margin:4% !important;
+    margin:0;
+    margin-bottom: 5%;
   }
-  .product-image {
-    width: 150px;
-    height: 150px;
-  }
-  .contain-items {
-    text-align: center;
-    width: 110vw;
-    height: 60vh;
-    margin-left: 15px;
+  .userContent .prCard img{
+    height: 300px;
   }
 }
-@media (min-width: 481px) and (max-width: 1024) {
-  .contain-box {
-    text-align: center;
-    width: 50vw;
-    height: 45vh;
-    margin-left: 100px;
-    margin-right: 500px;
+@media(max-width:800px){
+  .userContent .prCard .card-body{
+    background-color: #fff;
   }
-  .product-image {
-    width: 25vw;
-    height: 25vh;
-  }
-  .contain-items {
-    text-align: center;
-    width: 50vw;
-    height: 45vh;
-    margin-left: 100px;
-    margin-right: 500px;
+  .userContent .prCard img{
+    height: 250px;
   }
 }
-@media (min-width: 1025px) {
-  .contain-box {
-    text-align: center;
-    margin-top: 125px;
-    width: 45vw;
-    height: 45vh;
-    margin-left: 410px;
-    font-weight: 25px;
-    font-family: fantasy;
-    font-size: 25px;
+@media (max-width:600px){
+  .userContent .prCard{
+    margin: 4% 3% !important;
   }
-  .product-image {
-    width: 200px;
-    height: 200px;
-    margin-left: 250px;
+}
+@media (max-width:480px){
+  .userContent .col-lg-1{
+    margin-bottom: 2%;
+    width: 15%;
   }
-  .contain-items {
-    text-align: center;
-    width: 45vw;
-    height: 70vh;
-    margin-left: 410px;
-    font-size: 25px;
-    font-weight: 15px;
-    font-family: fantasy;
+  .userContent{
+    padding: 3%;
+  }
+  .userContent .col-lg-11{
+    margin-bottom: 2%;
+    width: 85%;
+  }
+  .userContent .prCard{
+    width: 94%;
+    margin:3% 3%!important;
+    margin-bottom: 5%;
+  }
+  
+  .userContent h1{
+    margin: 5% auto;
   }
 }
