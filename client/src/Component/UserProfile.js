@@ -75,43 +75,99 @@ on to a div component
     .map((data) => (
       <div
         key={data._id}
-        className="contain-items shadow-lg p-3 mb-5 bg-white rounded"
-      >
-        <div className="text-contain-below">
-          <img
+        className="card bg-white rounded prCard"
+      > <img
             src={
               data.images[0] ||
               "https://johnlewis.scene7.com/is/image/JohnLewis/237001430alt5?$rsp-pdp-port-1440$"
             }
-            className="product-image"
+            className="product-image card-image-top rounded"
           />
-          <h1>{data.item_name}</h1>
-          <p>{data.price}</p>
-          <p>{data.location}</p>
+        <div className="card-body">
+          <h5 className="card-title" style={{ fontWeight: 600 }}>
+              <button className="money">
+                <i className="fas fa-money-bill-wave"></i>
+              </button>
+              <label className="desc"> &#8377; {data.price}</label>
+          </h5>
+          <h5 className="capitalize" style={{ fontWeight: 600 }}>
+              <button className="money">
+                <i className="fas fa-luggage-cart"></i>
+              </button>
+              <label className="desc">{data.item_name}</label>
+          </h5>
+          <p className="location">
+              <i className="fas fa-map-marked-alt"></i> {data.location}
+          </p>
+        </div>
           <button
-            className="btn btn-danger"
+            className="btn btn-danger btn-block btn-lg"
             onClick={() => deletehandler(data._id)}
           >
             Delete
           </button>
-        </div>
       </div>
     ));
 
   return (
-    <div>
-      <div className="contain-box shadow-lg p-3 mb-5 bg-white rounded">
-        <image src="" />
-        <div className="text-contain-right">
-          <h4>USER PROFILE</h4>
-          <h1>{name}</h1>
-          <p>{address}</p>
-          <p>{phone}</p>
-          <p>{email}</p>
+    <div className="userProfile">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a className="navbar-brand" href="#">
+          Navbar
+        </a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <a href="/search">
+                <i className="fas fa-search"></i>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="/"><i className="fas fa-home "></i></a>
+            </li>
+            <li className="nav-item">
+              <a href="/">Logout </a>
+            </li>
+          </ul>
         </div>
-        <Link to="/form">Add items</Link>
+      </nav>
+      <div className="userContent">
+        <div className="contain-box bg-white rounded ">
+          <image src="" />
+          <div className="text-contain-right Details card">
+            <div className="card-header">
+              <h1>User Profile</h1>
+            </div>
+            <div className="card-body userDetails row">
+              <div className="col-lg-2">
+                <i className="far fa-user"></i>
+              </div>
+              <div className="col-lg-10">
+                <div className="row">
+                <div className="col-lg-1 col-sm-1"><h4><i className="fas fa-signature"></i></h4></div><div className="col-lg-11 col-sm-11"><h4>{name}</h4></div>
+                <div className="col-lg-1 col-sm-1"><h4><i className="fas fa-map-marked"></i></h4></div><div className="col-lg-11 col-sm-11"><h4>{address}</h4></div>
+                <div className="col-lg-1 col-sm-1"><h4><i className="fas fa-phone-alt"></i></h4></div><div className="col-lg-11 col-sm-11"><h4>{phone}</h4></div>
+                <div className="col-lg-1 col-sm-1"><h4><i className="fas fa-envelope"></i></h4></div><div className="col-lg-11 col-sm-11"><h4>{email}</h4></div>
+                </div>
+              </div>
+            </div>  
+            <button className="btn btn-primary btn-lg"><Link to="/form" className="Link">Add More Products</Link></button>
+          </div>
+        </div>
+        <h1>Listed Products:</h1>
+        {productList}
       </div>
-      {productList}
     </div>
   );
 };
