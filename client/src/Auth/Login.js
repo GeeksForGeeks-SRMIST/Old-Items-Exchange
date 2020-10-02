@@ -107,7 +107,7 @@ class Login extends Component {
                   aria-describedby="emailHelp"
                   onChange={this.handleChange}
                   id="password"
-                  placeholder="Password"
+                  placeholder="Password (Min Length-6)"
                   value={this.state.password}
                 />
                 <button onClick={this.login} className="btn btn-primary">
