@@ -7,15 +7,9 @@ body {
   background-size: 100% 100%;
   color: #07689f;
 }
-/* #root{
-  background: linear-gradient(270deg, #245666, #296624, #666624, #f1f158);
-  background-size: 800% 800%;
-
-  -webkit-animation: AnimationName 30s ease infinite;
-  -moz-animation: AnimationName 30s ease infinite;
-  animation: AnimationName 30s ease infinite;
-} */
-
+.rounded{
+  border-radius: 16px !important;
+}
 .carousel-arrange {
   position: static;
   display: block;
@@ -24,41 +18,6 @@ body {
 .carousel-display {
   display: flex;
 }
-
-@-webkit-keyframes AnimationName {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-@-moz-keyframes AnimationName {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-@keyframes AnimationName {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 .money {
   pointer-events: none;
   padding: 5%;
@@ -76,12 +35,6 @@ body {
 .seeMore button:hover{
   color: #0785ce;
 }
-/* .carousels-control {
-  width: 50vw;
-  height: 200px;
-  float: bottom;
-  margin-bottom:
-} */
 .desc {
   padding: 3.5%;
   padding-left: 12%;
@@ -133,8 +86,8 @@ p {
 .card-img-top {
   /* height:200px; */
   /* z-index: 1; */
-  border-top-right-radius: 5%;
-  border-top-left-radius: 5%;
+  border-bottom-left-radius: 0% !important;
+  border-bottom-right-radius: 0% !important;
 }
 .component{
   width:150px;
@@ -207,14 +160,22 @@ h2{
     padding: 15% 0 0 !important;
     text-align: center;
   }
+  .desc{
+    width:74%;
+  }
 }
 @media (max-width: 900px) {
   .cards {
     width: 48%;
     margin: auto 1%;
   }
+  #c0{
+    display: none;
+  }
   .nav-item {
     margin: 10px 10px 5px;
+  }.component{
+    width: 100%;
   }
   
 }
@@ -224,14 +185,9 @@ h2{
     margin: 2% 0;
     display: inline-block;
   }
-  #c0{
-    display: none;
-  }
-  .component{
-    width: 100%;
-  }
+  
   .desc{
-    width:74%;
+    width:73%;
   }
 }
 @media (max-width: 500px) {
@@ -246,7 +202,7 @@ h2{
     margin: 2% auto;
   }
   .desc{
-    width:78%;
+    width:77%;
   }
 }
 @media (max-width: 400px) {
@@ -254,7 +210,7 @@ h2{
     height: 225px;
   }
   .desc{
-    width:76%;
+    width:75%;
   }
 }
 @media (max-width: 360px) {

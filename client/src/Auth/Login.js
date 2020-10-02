@@ -72,7 +72,7 @@ class Login extends Component {
             </li>
             <li className="nav-item">
               <Link to="/" className="nav-link active">
-                Home
+              <i className="fas fa-home"></i>
               </Link>
             </li>
             <li className="nav-item">

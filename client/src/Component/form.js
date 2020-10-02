@@ -7,7 +7,7 @@ import Select from "react-select";
 import { header } from "express-validator";
 import firebase, { storage } from "../config/fire";
 import { database } from "firebase";
-
+import img1 from "./WhatsApp_Image_2020-10-02_at_5.42.47_PM-removebg-preview.png";
 let token;
 
 const FormEntry = () => {
@@ -249,6 +249,8 @@ const FormEntry = () => {
           </div>
         </div>
       </div>
+      <img src={img1} />
+
     </div>
   );
 };

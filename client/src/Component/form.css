@@ -11,6 +11,12 @@ body{
   margin-left: 2%;
   margin-top: 4%;
   color: rgb(119, 2, 168);
+  display: inline-block;
+}
+.itemDetailsFormFill img{
+  display: inline-block;
+  vertical-align: baseline;
+  margin-left: 18%;
 }
 .itemDetailsForm input:focus{
   color: rgb(119, 2, 168);
@@ -63,14 +69,19 @@ body{
 }
 @media(max-width: 1100px) {
   body{
-    overflow-y: hidden;
+    overflow-x: hidden;
   }
   .itemDetailsForm{
     margin-left: 3%;
-    margin-top: 2%;
+    margin-top: 3%;
+    vertical-align: top;
   }
   .itemDetailsForm form{
     font-size: 90%;
+  }
+  .itemDetailsFormFill img{
+    margin-left: 12%;
+    margin-top: 0%;
   }
 }
 
@@ -84,17 +95,25 @@ body{
     padding: 0;
     background-color: #fff !important;
     margin:0% 5vw;
-    margin-top:8%;
-
+    margin-top:15%;
+    border-radius: 16px;
+  }
+  .itemDetailsFormFill img{
+    display: none;
   }
   .itemDetailsFormFill{
-    height: auto;
-    padding-bottom: 3%;
+    height: 100vh;
+    padding-bottom: 10%;
   }
   body{
     overflow-y: scroll;
   }
 }
-
+@media (max-width: 360px){
+  .itemDetailsFormFill{
+    height: auto;
+    padding-bottom: 10%;
+  }
+}
 /* rgb(100,28,127)
 rgb(73,17,78) */

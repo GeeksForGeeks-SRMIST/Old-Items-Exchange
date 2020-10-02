@@ -58,7 +58,7 @@ class Signup extends Component {
           <ul className="nav bg-dark justify-content-center">
             <li className="nav-item">
               <Link to="/" className="nav-link active">
-                Home
+                <i className="fas fa-home"></i>
               </Link>
             </li>
             <li className="nav-item">

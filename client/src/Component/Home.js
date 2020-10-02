@@ -48,14 +48,14 @@ export const Home = () => {
       ? (card = product
           .filter((data) => data.category === type)
           .map((data) => (
-            <div key={Math.random() * 1000} className=" cards">
-              <div className="card">
+            <div key={Math.random() * 1000} className=" cards ">
+              <div className="card rounded">
                 <img
                   src={
                     data.images[0] ||
                     "https://cdn.pixabay.com/photo/2015/09/02/12/25/bmw-918408_1280.jpg"
                   }
-                  className="card-img-top"
+                  className="card-img-top rounded"
                 />
                 <div className="card-body">
                   <h5 className="card-title" style={{ fontWeight: 600 }}>
@@ -86,13 +86,13 @@ export const Home = () => {
           )))
       : (card = product.slice(0, 8).map((data) => (
           <div key={Math.random() * 1000} className=" cards">
-            <div className="card">
+            <div className="card rounded">
               <img
-                src={
+                  src={
                   data.images[0] ||
                   "https://cdn.pixabay.com/photo/2015/09/02/12/25/bmw-918408_1280.jpg"
                 }
-                className="card-img-top"
+                className="card-img-top rounded"
               />
               <div className="card-body">
                 <h5 className="card-title" style={{ fontWeight: 600 }}>
@@ -282,7 +282,7 @@ export const Home = () => {
                     <img src={logo} />
                   </div>
                   <div class="col-md-4 col-lg-4">
-                      <h3>Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</h3>
+                      <h3>The Jugaad of your belongings @SRM.done Right.24X7.</h3>
                   </div>
                 </div>
               </div>
@@ -292,7 +292,7 @@ export const Home = () => {
                     <img src={logo1} />
                   </div>
                   <div class="col-md-4 col-lg-4">
-                      <h3>Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</h3>
+                      <h3>Electronics.Vehicles.Games. Now #bechde with Potheri at your fingertips.</h3>
                   </div>
                 </div>
               </div>
@@ -302,7 +302,7 @@ export const Home = () => {
                     <img src={logo2} />
                   </div>
                   <div class="col-md-4 col-lg-4">
-                      <h3>Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</h3>
+                      <h3>Making stuff affordable.Don’t  believe?? Scroll.</h3>
                   </div>
                 </div>
               </div>
