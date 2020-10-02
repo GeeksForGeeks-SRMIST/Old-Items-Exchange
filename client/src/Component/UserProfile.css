@@ -117,4 +117,13 @@ i.fa-home{
   .userContent h1{
     margin: 5% auto;
   }
+  .userContent .prCard{
+    width: 94%;
+    margin:3% 3%!important;
+    margin-bottom: 5%;
+  }
+  
+  .userContent h1{
+    margin: 5% auto;
+  }
 }

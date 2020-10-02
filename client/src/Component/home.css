@@ -246,7 +246,7 @@ h2{
     margin: 2% auto;
   }
   .desc{
-    width:79%;
+    width:78%;
   }
 }
 @media (max-width: 400px) {
@@ -254,7 +254,7 @@ h2{
     height: 225px;
   }
   .desc{
-    width:77%;
+    width:76%;
   }
 }
 @media (max-width: 360px) {
@@ -262,7 +262,7 @@ h2{
     height: 200px;
   }
   .desc {
-    width: 75%;
+    width: 73%;
     font-size: 95%;
   }
 }
