@@ -29,6 +29,7 @@ body{
 }
 .userContent .Details p:last-child{
   text-transform: none;
+  /* text-tranform:none; */
 }
 .userDetails h2{
   text-align: justify;
