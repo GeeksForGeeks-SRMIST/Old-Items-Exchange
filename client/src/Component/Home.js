@@ -249,7 +249,7 @@ export const Home = () => {
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
               <a href="/search">
-                <i className="fas fa-search"></i>
+                <i className="fas fa-search "></i>
               </a>
             </li>
             <li className="nav-item nav-component">
@@ -268,7 +268,7 @@ export const Home = () => {
       </nav>
 
       {/* carousel implementation */}
-      <div id="c0">
+      <div id="c0" >
           <div
             id="carouselExampleControls"
             className="carousel slide"
@@ -345,7 +345,7 @@ export const Home = () => {
         <div className="carousel-arrange">
           <div className="container">
             <div id="c1">
-              <h2>Furniture</h2>
+              <h2  onClick="/">Furniture</h2>
               <div
                 id="carouselExampleControls1"
                 className="carousel slide"

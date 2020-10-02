@@ -1,29 +1,100 @@
-.background-form {
-  background-color: #bbe1fa;
-  height: 80vh;
-  width: 100vw;
-}
 
+.itemDetailsForm h3{
+  text-align: center;
+  margin: 2%;
+}
+body{
+  overflow-x: hidden;
+}
+.itemDetailsForm{
+  width: 33%;
+  margin-left: 2%;
+  margin-top: 4%;
+  color: rgb(119, 2, 168);
+}
+.itemDetailsForm input:focus{
+  color: rgb(119, 2, 168);
+}
+.itemDetailsFormFill{
+  background: url("./img.jfif");
+  background-size: cover;
+  height: 100vh;
+}
+.itemDetailsFormFill .nav a:hover{
+  font-size: 25px;
+  color:#fff;
+}
+.itemDetailsForm .bg-white{
+  padding: 3% 4%;
+}
+.itemDetailsForm .componentForm .selectItems,.itemDetailsForm input{
+  display: inline-block;
+  width: 85%;
+  margin:2% 1.5%;
+  color: rgb(119, 2, 168);
+}
+.itemDetailsForm .btn{
+ background-color: rgb(119, 2, 168);
+ border-color: rgb(119, 2, 168);
+ margin: 2%;
+}
+.itemDetailsForm input[type=text],.itemDetailsForm input[type=number]{
+  border-radius: 0%;
+  border-width: 0;
+  border-bottom-width: 2px;
+  border-bottom-color: rgb(119, 2, 168) !important;
+}
+.itemDetailsForm .componentForm .selectItems *{
+  border-color: rgb(119, 2, 168);
+}
+.itemDetailsForm .componentForm .selectItems span{
+  background-color: rgb(119, 2, 168);
+}
+.itemDetailsForm .componentForm .selectItems svg{
+  color:rgb(119, 2, 168);
+}
+.itemDetailsForm i{
+  width: 10%;
+  text-align: center;
+  display: inline-block;
+}
 .nav-link-active {
   font-size: 35px;
 }
-@media (max-width: 480px) {
-  .background-form {
-    width: 150vw;
-    height: 150vh;
+@media(max-width: 1100px) {
+  body{
+    overflow-y: hidden;
   }
-}
-@media (min-width: 1025px) {
-  .background-form {
-    width: 100vw;
-    margin-left: 500px;
-    height: 100vh;
+  .itemDetailsForm{
+    margin-left: 3%;
+    margin-top: 2%;
+  }
+  .itemDetailsForm form{
+    font-size: 90%;
   }
 }
 
-@media (min-width: 481px) and (max-width: 1024px) {
-  .background-form {
-    width: 100vw;
-    height: 100vh;
+@media (max-width: 800px) {
+  .itemDetailsFormFill{
+    background: linear-gradient(rgb(100,28,127),rgb(73,17,78));
+  }
+  .itemDetailsForm{
+    width: 90vw;
+    margin-left: 0;
+    padding: 0;
+    background-color: #fff !important;
+    margin:0% 5vw;
+    margin-top:8%;
+
+  }
+  .itemDetailsFormFill{
+    height: auto;
+    padding-bottom: 3%;
+  }
+  body{
+    overflow-y: scroll;
   }
 }
+
+/* rgb(100,28,127)
+rgb(73,17,78) */

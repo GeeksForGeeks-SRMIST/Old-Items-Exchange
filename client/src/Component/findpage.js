@@ -69,6 +69,12 @@ export const Findpage = () => {
               <i class="fas fa-search"></i>
               </button>
             </li>
+            <li className="nav-item"> 
+              <a href="/"><i className="fas fa-home"></i></a>
+            </li>
+            <li className="nav-item"> 
+              <a href="/profile">Profile</a>
+            </li>
           </ul>
         </div>
       </nav>

@@ -126,7 +126,6 @@ const FormEntry = () => {
     loader === true ? (
       <button
         className="btn btn-primary"
-        style={{ marginLeft: "178px" }}
         type="submit"
       >
         Submit
@@ -137,9 +136,12 @@ const FormEntry = () => {
     spinner === true ? (
       <Spinner></Spinner>
     ) : (
+      <div className="text-center">
       <button className="btn btn-primary" onClick={imageSaveHandler}>
         Upload
       </button>
+      {submit}
+      </div>
     );
 
   const options = [
@@ -151,101 +153,99 @@ const FormEntry = () => {
   ];
 
   const MyComponent = () => (
+    <div className="componentForm">
+    <i className="fas fa-filter"></i>
     <Select
+      className="selectItems"
       options={options}
+      placeholder="Select Product Type"
       onChange={(value) => updateCategory(value.value)}
     />
+    </div>
   );
 
   if (valid) return <Redirect to="/"></Redirect>;
   return (
-    <div>
-      <div>
-        <ul className="nav justify-content-center">
+    <div className="itemDetailsFormFill">
+      <nav>
+        <ul className="nav bg-dark justify-content-center">
           <li className="nav-item">
-            <a href="#" className="nav-link active">
+            <a href="/" className="nav-link"><i className="fas fa-home"></i></a> 
+          </li>
+          <li className="nav-item">
+            <a href="/profile" className="nav-link active">
               Profile
             </a>
           </li>
-          <li className="nav-item">
-            <Link to="/" className="nav-link active">
-              Home
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/login" className="nav-link active">
-              Login
-            </Link>
-          </li>
         </ul>
-      </div>
-      <div className="background-form">
+      </nav>
+      <div className="background-form itemDetailsForm">
         <div className="container-sm">
-          <div className="contanier-sm shadow-lg  bg-white rounded">
-            <div className="p-3 mb-5" style={{ height: "80vh" }}>
+          <div className=" bg-white rounded">
+              <h3>Enter Product Details</h3>
               <form onSubmit={postdetail}>
+                <i className="fas fa-signature"></i>
                 <input
                   type="text"
                   className="form-control"
                   aria-describedby="emailHelp"
                   name="name"
-                  placeholder="Product Name"
+                  placeholder="Enter Product Name"
                   onChange={productName}
                 />
-                <br></br>
-                <br></br>
+
+                {MyComponent()}
+
+                <i className="fas fa-rupee-sign"></i>
                 <input
                   type="number"
                   className="form-control"
                   aria-describedby="emailHelp"
                   name="number"
-                  placeholder="Number"
-                  onChange={Number}
-                />
-                <br></br>
-                <br></br>
-                <input
-                  type="number"
-                  className="form-control"
-                  aria-describedby="emailHelp"
-                  name="number"
-                  placeholder="Price"
+                  placeholder="Enter Product Price"
                   onChange={Price}
                 />
-                <br></br>
-                <br></br>
+                
+                <i className="fas fa-phone-alt"></i>
                 <input
-                  type="text"
+                  type="number"
                   className="form-control"
                   aria-describedby="emailHelp"
-                  name="location"
-                  placeholder="Location"
-                  onChange={Location}
+                  name="number"
+                  placeholder="Ph No ( Ex :987654XXXX )"
+                  onChange={Number}
                 />
-                <br></br>
-                <br></br>
+                
+                
+                <i className="fas fa-map-marker-alt"></i>
                 <input
                   name="address"
                   type="text"
                   className="form-control"
                   aria-describedby="emailHelp"
-                  placeholder="address"
+                  placeholder="Enter your Address"
                   onChange={Address}
                 />
-                <br></br>
-                <br></br>
-                {MyComponent()}
-                <br></br>
-                <br></br>
+                
+                <i className="fas fa-map-marked"></i>
+                <input
+                  type="text"
+                  className="form-control"
+                  aria-describedby="emailHelp"
+                  name="location"
+                  placeholder="Enter your Location (City)"
+                  onChange={Location}
+                />
+                
+                
+                <i className="fas fa-images"></i>
                 <input
                   placeholder="Select Image"
                   type="file"
                   onChange={imageHandler}
                 ></input>
-                {spinners}
-                {submit}
+                {spinners}      
               </form>
-            </div>
           </div>
         </div>
       </div>
