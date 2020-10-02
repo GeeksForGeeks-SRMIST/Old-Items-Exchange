@@ -93,7 +93,7 @@ class Signup extends Component {
                     value={this.state.password}
                     name="password"
                     type="password"
-                    placeholder="Password"
+                    placeholder="Password (Min Length-6)"
                     className="form-control"
                     aria-describedby="emailHelp"
                     onChange={this.handleChange}
@@ -113,7 +113,7 @@ class Signup extends Component {
                     value={this.state.phone}
                     name="phone"
                     type="Number"
-                    placeholder="Phone Number"
+                    placeholder="Ph No. (Ex-98765XXXXX)"
                     className="form-control"
                     aria-describedby="emailHelp"
                     onChange={this.handleChange}
