@@ -127,10 +127,8 @@ export const Home = () => {
 
   if (localStorage.getItem("token") || localStorage.getItem("userId")) {
     extras = (
-      <li>
-        <Link className="nav-item" to="/profile">
-          Profile
-        </Link>
+      <li className="nav-item">
+        <Link to="/profile">Profile</Link>
       </li>
     );
   }
@@ -211,12 +209,12 @@ export const Home = () => {
 
   if (!localStorage.getItem("token") || !localStorage.getItem("userId")) {
     signup = (
-      <li>
-        <Link className="navbar-item" to="/signup">
+      <li className="nav-item">
+        <Link className="nav-item" to="/signup">
           Signup
         </Link>
 
-        <Link className="navbar-item" to="/login">
+        <Link className="nav-item" to="/login">
           Login
         </Link>
       </li>
@@ -252,9 +250,9 @@ export const Home = () => {
               <div className="component">{MyComponent()}</div>
             </li>
 
-            <li className="nav-item">{signup}</li>
+            {signup}
 
-            <li className="nav-item">{extras}</li>
+            {extras}
           </ul>
         </div>
       </nav>
