@@ -64,6 +64,11 @@ as head
     console.log(key);
   };
 
+  const logout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+  };
+
   /* 
 this function productlist is used to diplay every element fetch through api
 and displaay it specifically to userID using filter and map and displaying it
@@ -73,39 +78,38 @@ on to a div component
   const productList = product
     .filter((data) => data.user === localStorage.getItem("userId"))
     .map((data) => (
-      <div
-        key={data._id}
-        className="card bg-white rounded prCard"
-      > <img
-            src={
-              data.images[0] ||
-              "https://johnlewis.scene7.com/is/image/JohnLewis/237001430alt5?$rsp-pdp-port-1440$"
-            }
-            className="product-image card-image-top rounded"
-          />
+      <div key={data._id} className="card bg-white rounded prCard">
+        {" "}
+        <img
+          src={
+            data.images[0] ||
+            "https://johnlewis.scene7.com/is/image/JohnLewis/237001430alt5?$rsp-pdp-port-1440$"
+          }
+          className="product-image card-image-top rounded"
+        />
         <div className="card-body">
           <h5 className="card-title" style={{ fontWeight: 600 }}>
-              <button className="money">
-                <i className="fas fa-money-bill-wave"></i>
-              </button>
-              <label className="desc"> &#8377; {data.price}</label>
+            <button className="money">
+              <i className="fas fa-money-bill-wave"></i>
+            </button>
+            <label className="desc"> &#8377; {data.price}</label>
           </h5>
           <h5 className="capitalize" style={{ fontWeight: 600 }}>
-              <button className="money">
-                <i className="fas fa-luggage-cart"></i>
-              </button>
-              <label className="desc">{data.item_name}</label>
+            <button className="money">
+              <i className="fas fa-luggage-cart"></i>
+            </button>
+            <label className="desc">{data.item_name}</label>
           </h5>
           <p className="location">
-              <i className="fas fa-map-marked-alt"></i> {data.location}
+            <i className="fas fa-map-marked-alt"></i> {data.location}
           </p>
         </div>
-          <button
-            className="btn btn-danger btn-block btn-lg"
-            onClick={() => deletehandler(data._id)}
-          >
-            Delete
-          </button>
+        <button
+          className="btn btn-danger btn-block btn-lg"
+          onClick={() => deletehandler(data._id)}
+        >
+          Delete
+        </button>
       </div>
     ));
 
@@ -134,10 +138,14 @@ on to a div component
               </a>
             </li>
             <li className="nav-item">
-              <a href="/"><i className="fas fa-home "></i></a>
+              <a href="/">
+                <i className="fas fa-home "></i>
+              </a>
             </li>
             <li className="nav-item">
-              <a href="/">Logout </a>
+              <Link className="nav-item" onClick={logout} to="/">
+                Logout
+              </Link>
             </li>
           </ul>
         </div>
@@ -155,14 +163,46 @@ on to a div component
               </div>
               <div className="col-lg-10">
                 <div className="row">
-                <div className="col-lg-1 col-sm-1"><h4><i className="fas fa-signature"></i></h4></div><div className="col-lg-11 col-sm-11"><h4>{name}</h4></div>
-                <div className="col-lg-1 col-sm-1"><h4><i className="fas fa-map-marked"></i></h4></div><div className="col-lg-11 col-sm-11"><h4>{address}</h4></div>
-                <div className="col-lg-1 col-sm-1"><h4><i className="fas fa-phone-alt"></i></h4></div><div className="col-lg-11 col-sm-11"><h4>{phone}</h4></div>
-                <div className="col-lg-1 col-sm-1"><h4><i className="fas fa-envelope"></i></h4></div><div className="col-lg-11 col-sm-11"><h4>{email}</h4></div>
+                  <div className="col-lg-1 col-sm-1">
+                    <h4>
+                      <i className="fas fa-signature"></i>
+                    </h4>
+                  </div>
+                  <div className="col-lg-11 col-sm-11">
+                    <h4>{name}</h4>
+                  </div>
+                  <div className="col-lg-1 col-sm-1">
+                    <h4>
+                      <i className="fas fa-map-marked"></i>
+                    </h4>
+                  </div>
+                  <div className="col-lg-11 col-sm-11">
+                    <h4>{address}</h4>
+                  </div>
+                  <div className="col-lg-1 col-sm-1">
+                    <h4>
+                      <i className="fas fa-phone-alt"></i>
+                    </h4>
+                  </div>
+                  <div className="col-lg-11 col-sm-11">
+                    <h4>{phone}</h4>
+                  </div>
+                  <div className="col-lg-1 col-sm-1">
+                    <h4>
+                      <i className="fas fa-envelope"></i>
+                    </h4>
+                  </div>
+                  <div className="col-lg-11 col-sm-11">
+                    <h4>{email}</h4>
+                  </div>
                 </div>
               </div>
-            </div>  
-            <button className="btn btn-primary btn-lg"><Link to="/form" className="Link">Add More Products</Link></button>
+            </div>
+            <button className="btn btn-primary btn-lg">
+              <Link to="/form" className="Link">
+                Add More Products
+              </Link>
+            </button>
           </div>
         </div>
         <h1>Listed Products:</h1>

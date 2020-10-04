@@ -9,11 +9,6 @@ import logo from "./4272140.jpg";
 import logo1 from "./6796.jpg";
 import logo2 from "./15256.jpg";
 export const Home = () => {
-  const logout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("userId");
-  };
-
   const [product, updateProduct] = useState([]);
   const [type, updateType] = useState("");
 
@@ -88,7 +83,7 @@ export const Home = () => {
           <div key={Math.random() * 1000} className=" cards">
             <div className="card rounded">
               <img
-                  src={
+                src={
                   data.images[0] ||
                   "https://cdn.pixabay.com/photo/2015/09/02/12/25/bmw-918408_1280.jpg"
                 }
@@ -136,10 +131,7 @@ export const Home = () => {
         <Link className="nav-item" to="/profile">
           Profile
         </Link>
-        <Link className="nav-item" onClick={logout}>
-          Logout
-        </Link>
-      </li> 
+      </li>
     );
   }
 
@@ -223,6 +215,10 @@ export const Home = () => {
         <Link className="navbar-item" to="/signup">
           Signup
         </Link>
+
+        <Link className="navbar-item" to="/login">
+          Login
+        </Link>
       </li>
     );
   }
@@ -257,179 +253,174 @@ export const Home = () => {
             </li>
 
             <li className="nav-item">{signup}</li>
-            <li className="nav-item">
-              <Link to="/login">
-                Login <i className="fas fa-sign-in-alt"></i>
-              </Link>
-            </li>
+
             <li className="nav-item">{extras}</li>
           </ul>
         </div>
       </nav>
 
       {/* carousel implementation */}
-      <div id="c0" >
-          <div
-            id="carouselExampleControls"
-            className="carousel slide"
-            data-ride="carousel"
-            data-interval="7000"
-          >
-            <div className="carousel-inner">
-              <div className="carousel-item active">
-                <div class="row">
-                  <div class="col-md-7 col-lg-7">
-                    <img src={logo} />
-                  </div>
-                  <div class="col-md-4 col-lg-4">
-                      <h3>The Jugaad of your belongings @SRM.done Right.24X7.</h3>
-                  </div>
+      <div id="c0">
+        <div
+          id="carouselExampleControls"
+          className="carousel slide"
+          data-ride="carousel"
+          data-interval="7000"
+        >
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <div class="row">
+                <div class="col-md-7 col-lg-7">
+                  <img src={logo} />
                 </div>
-              </div>
-              <div className="carousel-item ">
-                <div class="row">
-                  <div class="col-md-7 col-lg-7">
-                    <img src={logo1} />
-                  </div>
-                  <div class="col-md-4 col-lg-4">
-                      <h3>Electronics.Vehicles.Games. Now #bechde with Potheri at your fingertips.</h3>
-                  </div>
-                </div>
-              </div>
-              <div className="carousel-item ">
-                <div class="row">
-                  <div class="col-md-7 col-lg-7">
-                    <img src={logo2} />
-                  </div>
-                  <div class="col-md-4 col-lg-4">
-                      <h3>Making stuff affordable.Don’t  believe?? Scroll.</h3>
-                  </div>
+                <div class="col-md-4 col-lg-4">
+                  <h3>The Jugaad of your belongings @SRM.done Right.24X7.</h3>
                 </div>
               </div>
             </div>
-            <a
-              className="carousel-control-next"
-              href="#carouselExampleControls"
-              role="button"
-              data-slide="next"
-            >
-              <span
-                className="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="sr-only"></span>
-            </a>
-
-            <a
-              className="carousel-control-prev"
-              href="#carouselExampleControls"
-              role="button"
-              data-slide="prev"
-            >
-              <span
-                className="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="sr-only"></span>
-            </a>
+            <div className="carousel-item ">
+              <div class="row">
+                <div class="col-md-7 col-lg-7">
+                  <img src={logo1} />
+                </div>
+                <div class="col-md-4 col-lg-4">
+                  <h3>
+                    Electronics.Vehicles.Games. Now #bechde with Potheri at your
+                    fingertips.
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className="carousel-item ">
+              <div class="row">
+                <div class="col-md-7 col-lg-7">
+                  <img src={logo2} />
+                </div>
+                <div class="col-md-4 col-lg-4">
+                  <h3>Making stuff affordable.Don’t believe?? Scroll.</h3>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      <div className="container-fluid">
-        
+          <a
+            className="carousel-control-next"
+            href="#carouselExampleControls"
+            role="button"
+            data-slide="next"
+          >
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="sr-only"></span>
+          </a>
 
+          <a
+            className="carousel-control-prev"
+            href="#carouselExampleControls"
+            role="button"
+            data-slide="prev"
+          >
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="sr-only"></span>
+          </a>
+        </div>
+      </div>
+      <div className="container-fluid">
         {/*  */}
         <h1 className="recomendation">Recommended</h1>
         <div className=" content">{card}</div>
         <h1>Categories</h1>
         <div className="carousel-display">
-        <div className="carousel-arrange">
-          <div className="container">
-            <div id="c1">
-              <h2  onClick="/">Furniture</h2>
-              <div
-                id="carouselExampleControls1"
-                className="carousel slide"
-                data-ride="carousel"
-                data-interval="4700"
-              >
-                <div className="carousel-inner">
-                  <div className="carousel-item active">
-                    <img
-                      src="https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
-                      className="d-block w-100"
-                      alt="..."
-                    ></img>
+          <div className="carousel-arrange">
+            <div className="container">
+              <div id="c1">
+                <h2 onClick="/">Furniture</h2>
+                <div
+                  id="carouselExampleControls1"
+                  className="carousel slide"
+                  data-ride="carousel"
+                  data-interval="4700"
+                >
+                  <div className="carousel-inner">
+                    <div className="carousel-item active">
+                      <img
+                        src="https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
+                        className="d-block w-100"
+                        alt="..."
+                      ></img>
+                    </div>
+                    {furniture}
                   </div>
-                  {furniture}
                 </div>
               </div>
-            </div>
-            <div id="c2">
-              <h2>Automobile</h2>
-              <div
-                id="carouselExampleControls2"
-                className="carousel slide"
-                data-ride="carousel"
-                data-interval="4800"
-              >
-                <div className="carousel-inner">
-                  <div className="carousel-item active">
-                    <img
-                      src="https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
-                      className="d-block w-100"
-                      alt="..."
-                    ></img>
+              <div id="c2">
+                <h2>Automobile</h2>
+                <div
+                  id="carouselExampleControls2"
+                  className="carousel slide"
+                  data-ride="carousel"
+                  data-interval="4800"
+                >
+                  <div className="carousel-inner">
+                    <div className="carousel-item active">
+                      <img
+                        src="https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
+                        className="d-block w-100"
+                        alt="..."
+                      ></img>
+                    </div>
+                    {automobile}
                   </div>
-                  {automobile}
                 </div>
               </div>
-            </div>
-            <div id="c3">
-              <h2>Electronic Appliances</h2>
-              <div
-                id="carouselExampleControls3"
-                className="carousel slide"
-                data-ride="carousel"
-                data-interval="4900"
-              >
-                <div className="carousel-inner">
-                  <div className="carousel-item active">
-                    <img
-                      src="https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
-                      className="d-block w-100"
-                      alt="..."
-                    ></img>
+              <div id="c3">
+                <h2>Electronic Appliances</h2>
+                <div
+                  id="carouselExampleControls3"
+                  className="carousel slide"
+                  data-ride="carousel"
+                  data-interval="4900"
+                >
+                  <div className="carousel-inner">
+                    <div className="carousel-item active">
+                      <img
+                        src="https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
+                        className="d-block w-100"
+                        alt="..."
+                      ></img>
+                    </div>
+                    {electronic_appliance}
                   </div>
-                  {electronic_appliance}
                 </div>
               </div>
-            </div>
-            <div id="c4">
-              <h2>Gaming Equipments</h2>
-              <div
-                id="carouselExampleControls4"
-                className="carousel slide"
-                data-ride="carousel"
-                data-interval="5000"
-              >
-                <div className="carousel-inner">
-                  <div className="carousel-item active">
-                    <img
-                      src="https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
-                      className="d-block w-100"
-                      alt="..."
-                    ></img>
+              <div id="c4">
+                <h2>Gaming Equipments</h2>
+                <div
+                  id="carouselExampleControls4"
+                  className="carousel slide"
+                  data-ride="carousel"
+                  data-interval="5000"
+                >
+                  <div className="carousel-inner">
+                    <div className="carousel-item active">
+                      <img
+                        src="https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
+                        className="d-block w-100"
+                        alt="..."
+                      ></img>
+                    </div>
+                    {gaming}
                   </div>
-                  {gaming}
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      </div>
-      
-      
     </div>
   );
 };
