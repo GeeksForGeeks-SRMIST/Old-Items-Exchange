@@ -3,6 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import "./form.css";
 import Spinner from "./spinner";
+import Axios from "axios";
 import Select from "react-select";
 import { header } from "express-validator";
 import firebase, { storage } from "../config/fire";
@@ -10,11 +11,13 @@ import { database } from "firebase";
 import img1 from "./WhatsApp_Image_2020-10-02_at_5.42.47_PM-removebg-preview.png";
 let token;
 
-const FormEntry = () => {
+const FormEntry = (match) => {
+  const data = match.match.params.id;
   const [product, updateProduct] = useState("");
   const [price, updatePrice] = useState(null);
   const [number, updateNumber] = useState(null);
   const [address, updateAddress] = useState("");
+  const [description, updateDesc] = useState("");
   const [location, updateLocation] = useState("");
   const [valid, updateValid] = useState(false);
   const [category, updateCategory] = useState("");
@@ -22,7 +25,22 @@ const FormEntry = () => {
   const [path, updatePath] = useState("");
   const [loader, updateLoader] = useState(false);
   const [spinner, updateSpinner] = useState(false);
-
+  const requestUserDetails = async (e) => {
+    const head = {
+      "x-auth-token": localStorage.getItem("token").toString(),
+    };
+    await Axios.get("api/auth", {
+      headers: head,
+    })
+      .then((res) => {
+        return (
+          updateNumber(res.data.phone),
+          updateAddress(res.data.address),
+          updateLocation(res.data.location)
+        );
+      })
+      .catch((err) => console.log(err));
+  };
   const productName = (e) => {
     e.preventDefault();
     updateProduct(e.target.value);
@@ -31,24 +49,29 @@ const FormEntry = () => {
     value.preventDefault();
     updateCategory(value);
   }; */
-  const Number = (e) => {
-    e.preventDefault();
-    updateNumber(e.target.value);
-  };
-  const Address = (e) => {
-    e.preventDefault();
-    updateAddress(e.target.value);
-  };
-  const Location = (e) => {
-    e.preventDefault();
-    updateLocation(e.target.value);
-  };
+  // const Number = (e) => {
+  //   e.preventDefault();
+  //   updateNumber(e.target.value);
+  // };
+  // const Address = (e) => {
+  //   e.preventDefault();
+  //   updateAddress(e.target.value);
+  // };
+  // const Location = (e) => {
+  //   e.preventDefault();
+  //   updateLocation(e.target.value);
+  // };
   const Price = (e) => {
     e.preventDefault();
     updatePrice(e.target.value);
   };
+  const Desc = (e) => {
+    e.preventDefault();
+    updateDesc(e.target.value);
+  };
   let tkn = "";
   useEffect(() => {
+    requestUserDetails();
     token = localStorage.getItem("token");
     tkn = token.toString();
   });
@@ -110,6 +133,7 @@ const FormEntry = () => {
           location,
           images: [newpath],
           category,
+          description
         },
         {
           headers: headers,
@@ -125,7 +149,7 @@ const FormEntry = () => {
   let submit =
     loader === true ? (
       <button
-        className="btn btn-primary"
+        className="btn btn-primary btn-lg"
         type="submit"
       >
         Submit
@@ -137,7 +161,7 @@ const FormEntry = () => {
       <Spinner></Spinner>
     ) : (
       <div className="text-center">
-      <button className="btn btn-primary" onClick={imageSaveHandler}>
+      <button className="btn btn-primary btn-lg" onClick={imageSaveHandler}>
         Upload
       </button>
       {submit}
@@ -206,7 +230,7 @@ const FormEntry = () => {
                   onChange={Price}
                 />
                 
-                <i className="fas fa-phone-alt"></i>
+                {/* <i className="fas fa-phone-alt"></i>
                 <input
                   type="number"
                   className="form-control"
@@ -235,9 +259,10 @@ const FormEntry = () => {
                   name="location"
                   placeholder="Enter your Location (City)"
                   onChange={Location}
-                />
+                /> */}
                 
-                
+                <i className="fas fa-info-circle"></i>
+                <textarea name="" id="" rows="6" placeholder="Enter Item Description" onChange={Desc}></textarea>
                 <i className="fas fa-images"></i>
                 <input
                   placeholder="Select Image"
@@ -250,7 +275,6 @@ const FormEntry = () => {
         </div>
       </div>
       <img src={img1} />
-
     </div>
   );
 };

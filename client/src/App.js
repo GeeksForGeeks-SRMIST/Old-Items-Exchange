@@ -6,6 +6,7 @@ import Home from "./Component/Home";
 import Form from "./Component/form";
 import ProfilePage from "./Component/UserProfile";
 import Findpage from "./Component/findpage";
+import ItemPage from "./Component/itemPage";
 /* import FileUpload from "./Component/Fileupload"; */
 class App extends Component {
   state = {
@@ -36,8 +37,9 @@ class App extends Component {
             <Route path="/profile" component={ProfilePage}></Route>
           ) : null}
           <Route path="/signup" component={Signup}></Route>
-          <Route path="/form" component={Form}></Route>
-          <Route path="/search" component={Findpage} />
+          <Route path="/search" exact component={Findpage} />
+          <Route path="/item/:id" component={ItemPage} />
+          <Route path="/:id" component={Form}></Route>
           {/* Route path="/fileupload" component={FileUpload}></Route> */}
         </Switch>
         {/*  {this.state.user ? <Signup /> : <Form></Form>} */}

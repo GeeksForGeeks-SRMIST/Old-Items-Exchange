@@ -44,6 +44,40 @@ export const Home = () => {
           .filter((data) => data.category === type)
           .map((data) => (
             <div key={Math.random() * 1000} className=" cards ">
+              <Link to={ `/item/${data._id}`}>
+                <div className="card rounded">
+                  <img
+                    src={
+                      data.images[0] ||
+                      "https://cdn.pixabay.com/photo/2015/09/02/12/25/bmw-918408_1280.jpg"
+                    }
+                    className="card-img-top rounded"
+                  />
+                  <div className="card-body">
+                    
+                    <h5 className="capitalize" style={{ fontWeight: 600 }}>
+                      <button className="money">
+                        <i className="fas fa-luggage-cart"></i>
+                      </button>
+                      <label className="desc">{data.item_name}</label>
+                    </h5>
+                    <h5 className="card-title" style={{ fontWeight: 600 }}>
+                      <button className="money">
+                        <i className="fas fa-money-bill-wave"></i>
+                      </button>
+                      <label className="desc"> &#8377; {data.price}</label>
+                    </h5>
+                    <p className="location">
+                      <i className="fas fa-map-marked-alt"></i> {data.location}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          )))
+      : (card = product.slice(0, 8).map((data) => (
+          <div key={Math.random() * 1000} className=" cards">
+            <Link to={`/item/${data._id}`}>
               <div className="card rounded">
                 <img
                   src={
@@ -53,67 +87,25 @@ export const Home = () => {
                   className="card-img-top rounded"
                 />
                 <div className="card-body">
-                  <h5 className="card-title" style={{ fontWeight: 600 }}>
-                    <button className="money">
-                      <i className="fas fa-money-bill-wave"></i>
-                    </button>
-                    <label className="desc"> &#8377; {data.price}</label>
-                  </h5>
+                  
                   <h5 className="capitalize" style={{ fontWeight: 600 }}>
                     <button className="money">
                       <i className="fas fa-luggage-cart"></i>
                     </button>
                     <label className="desc">{data.item_name}</label>
                   </h5>
-                  <p style={{ textAlign: "center" }}>Owner Details</p>
-                  <p className="capitalize">
-                    <i className="fas fa-user"></i> : {data.author}
-                  </p>
-                  <p>
-                    <i className="fas fa-phone-alt"></i> : {data.number}
-                  </p>
+                  <h5 className="card-title" style={{ fontWeight: 600 }}>
+                    <button className="money">
+                      <i className="fas fa-money-bill-wave"></i>
+                    </button>
+                    <label className="desc"> &#8377; {data.price}</label>
+                  </h5>
                   <p className="location">
                     <i className="fas fa-map-marked-alt"></i> {data.location}
                   </p>
                 </div>
               </div>
-            </div>
-          )))
-      : (card = product.slice(0, 8).map((data) => (
-          <div key={Math.random() * 1000} className=" cards">
-            <div className="card rounded">
-              <img
-                src={
-                  data.images[0] ||
-                  "https://cdn.pixabay.com/photo/2015/09/02/12/25/bmw-918408_1280.jpg"
-                }
-                className="card-img-top rounded"
-              />
-              <div className="card-body">
-                <h5 className="card-title" style={{ fontWeight: 600 }}>
-                  <button className="money">
-                    <i className="fas fa-money-bill-wave"></i>
-                  </button>
-                  <label className="desc"> &#8377; {data.price}</label>
-                </h5>
-                <h5 className="capitalize" style={{ fontWeight: 600 }}>
-                  <button className="money">
-                    <i className="fas fa-luggage-cart"></i>
-                  </button>
-                  <label className="desc">{data.item_name}</label>
-                </h5>
-                <p style={{ textAlign: "center" }}>Owner Details</p>
-                <p className="capitalize">
-                  <i className="fas fa-user"></i> : {data.author}
-                </p>
-                <p>
-                  <i className="fas fa-phone-alt"></i> : {data.number}
-                </p>
-                <p className="location">
-                  <i className="fas fa-map-marked-alt"></i> {data.location}
-                </p>
-              </div>
-            </div>
+            </Link>
           </div>
         )));
   }

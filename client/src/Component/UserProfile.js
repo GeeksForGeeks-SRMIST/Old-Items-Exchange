@@ -8,11 +8,12 @@ export const UserProfile = () => {
   const [address, updateAddress] = useState("");
   const [phone, updatePhone] = useState("");
   const [email, updateEmail] = useState("");
+  const [id, updateId] = useState("");
+
   useEffect(() => {
     requestList();
     requestUserDetails();
-  }, [product]);
-
+  }, []);
   /* 
 requests userdetail using token auth passed in the header
    */
@@ -26,6 +27,7 @@ requests userdetail using token auth passed in the header
     })
       .then((res) => {
         return (
+          updateId(res.data._id),
           updateName(res.data.name),
           updatePhone(res.data.phone),
           updateAddress(res.data.address),
@@ -88,18 +90,19 @@ on to a div component
           className="product-image card-image-top rounded"
         />
         <div className="card-body">
-          <h5 className="card-title" style={{ fontWeight: 600 }}>
-            <button className="money">
-              <i className="fas fa-money-bill-wave"></i>
-            </button>
-            <label className="desc"> &#8377; {data.price}</label>
-          </h5>
           <h5 className="capitalize" style={{ fontWeight: 600 }}>
             <button className="money">
               <i className="fas fa-luggage-cart"></i>
             </button>
             <label className="desc">{data.item_name}</label>
           </h5>
+          <h5 className="card-title" style={{ fontWeight: 600 }}>
+            <button className="money">
+              <i className="fas fa-money-bill-wave"></i>
+            </button>
+            <label className="desc"> &#8377; {data.price}</label>
+          </h5>
+          
           <p className="location">
             <i className="fas fa-map-marked-alt"></i> {data.location}
           </p>
@@ -199,7 +202,7 @@ on to a div component
               </div>
             </div>
             <button className="btn btn-primary btn-lg">
-              <Link to="/form" className="Link">
+              <Link to={`/${id}`} className="Link">
                 Add More Products
               </Link>
             </button>

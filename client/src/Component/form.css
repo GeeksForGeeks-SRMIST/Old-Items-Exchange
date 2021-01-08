@@ -13,13 +13,23 @@ body{
   color: rgb(119, 2, 168);
   display: inline-block;
 }
+
 .itemDetailsFormFill img{
   display: inline-block;
   vertical-align: baseline;
   margin-left: 18%;
 }
-.itemDetailsForm input:focus{
-  color: rgb(119, 2, 168);
+.itemDetailsForm input:focus,.itemDetailsForm textarea:focus{
+  color: rgb(147, 6, 207);
+  outline: 0px;
+}
+.itemDetailsForm textarea{
+  resize: none;
+  display: inline-block;
+  width: 85%;
+}
+.itemDetailsForm textarea::placeholder{
+  color: #808080;
 }
 .itemDetailsFormFill{
   background: url("./img.jfif");
@@ -42,13 +52,18 @@ body{
 .itemDetailsForm .btn{
  background-color: rgb(119, 2, 168);
  border-color: rgb(119, 2, 168);
- margin: 2%;
+ margin: 5%;
 }
-.itemDetailsForm input[type=text],.itemDetailsForm input[type=number]{
+.itemDetailsForm input[type=text],.itemDetailsForm input[type=number],.itemDetailsForm textarea{
   border-radius: 0%;
   border-width: 0;
   border-bottom-width: 2px;
   border-bottom-color: rgb(119, 2, 168) !important;
+  outline:0; 
+  -webkit-appearance:none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
 }
 .itemDetailsForm .componentForm .selectItems *{
   border-color: rgb(119, 2, 168);
@@ -72,6 +87,7 @@ body{
     overflow-x: hidden;
   }
   .itemDetailsForm{
+    overflow-y: hidden; 
     margin-left: 3%;
     margin-top: 3%;
     vertical-align: top;
@@ -111,7 +127,7 @@ body{
 }
 @media (max-width: 360px){
   .itemDetailsFormFill{
-    height: auto;
+    height: 100vh;
     padding-bottom: 10%;
   }
 }

@@ -1,11 +1,14 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const ItemSchema = mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'users',
+    ref: "users",
   },
   author: {
+    type: String,
+  },
+  description: {
     type: String,
   },
   category: {
@@ -14,6 +17,7 @@ const ItemSchema = mongoose.Schema({
   item_name: {
     type: String,
     required: true,
+    lowercase : true
   },
   price: {
     type: String,
@@ -41,4 +45,4 @@ const ItemSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('item', ItemSchema);
+module.exports = mongoose.model("item", ItemSchema);

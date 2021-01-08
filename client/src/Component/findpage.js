@@ -1,49 +1,71 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
+import { Link } from "react-router-dom";
+
 import "./findPage.css";
 
 export const Findpage = () => {
   const [product, updateProduct] = useState([]);
   const [type, updateType] = useState("");
+  const [query,setQuery] = useState("");
   const userItem = async () => {
-    await Axios.get("/api/item/list")
-      .then((res) => updateProduct(res.data.items))
+    if(type!=''){
+      await Axios.get(`/api/item/list/${type}`)
+      .then((res) => {
+        console.log(res.data.items);
+        updateProduct(res.data.items);
+      })
       .catch((err) => console.log(err));
+    }
   };
   let card;
-
-  const changeType = () => {
-    card = product
-      .filter((data) => {
-        return data.item_name === type || data.location === type;
-      })
-      .map((data) => (
-        <div key={Math.random() * 1000} className="cards">
-          <div className="card">
-                <img
-                  src={data.images[0] || "https://cdn.pixabay.com/photo/2015/09/02/12/25/bmw-918408_1280.jpg"}
-                  className="card-img-top"
-                />
-                <div className="card-body"> 
-                <h5 className="card-title" style={{fontWeight:600}}><button className="money"><i className="fas fa-money-bill-wave"></i></button><label className="desc">  &#8377; {data.price}</label></h5>
-                  <h5 className="capitalize" style={{fontWeight:600}}><button className="money"><i className="fas fa-luggage-cart"></i></button><label className="desc">{data.item_name}</label></h5>
-                  <p style={{textAlign:"center"}}>Owner Details</p>
-                  <p className="capitalize"><i class="fas fa-user"></i> : {data.author}</p>
-                  <p><i class="fas fa-phone-alt"></i> : {data.number}</p>
-                  <p className="location" ><i class="fas fa-map-marked-alt"></i>   {data.location}</p>
+  function cards(product){
+    return(
+      product.map((data,index) => (
+        <div key={Math.random() * 1000} className=" cards ">
+              <Link to={`/item/${data._id}`}>
+                <div className="card" id={index}>
+                  <img
+                    src={
+                      data.images[0] ||
+                      "https://cdn.pixabay.com/photo/2015/09/02/12/25/bmw-918408_1280.jpg"
+                    }
+                    className="card-img-top rounded"
+                  />
+                  <div className="card-body">
+                    <h5 className="capitalize" style={{ fontWeight: 600 }}>
+                      <button className="money">
+                        <i className="fas fa-luggage-cart"></i>
+                      </button>
+                      <label className="desc">{data.item_name}</label>
+                    </h5>
+                    <h5 className="card-title" style={{ fontWeight: 600 }}>
+                      <button className="money">
+                        <i className="fas fa-money-bill-wave"></i>
+                      </button>
+                      <label className="desc"> &#8377; {data.price}</label>
+                    </h5>
+                    <p className="location">
+                      <i className="fas fa-map-marked-alt"></i> {data.location}
+                    </p>
+                  </div>
                 </div>
-              </div>
-        </div>
-      ));
+              </Link>
+            </div>
+    )))
   };
 
-  const typeChangeHandle = (e) => {
-    e.preventDefault();
-    updateType(e.target.value);
+  const getQuery = (e) =>{
+    setQuery(e.target.value);
+  }
+  const typeChangeHandle = () => {
+    updateType(query);
+    
+    setQuery('');
   };
   useEffect((e) => {
     userItem();
-  }, changeType());
+  }, [type]);
 
   return (
     <div>
@@ -61,11 +83,11 @@ export const Findpage = () => {
                 placeholder="Enter item or place"
                 className="form-control home searchBar"
                 aria-describedby="emailHelp"
-                onChange={typeChangeHandle}
+                onChange={getQuery}
                 style={{ width: "15rem", float: "left" }}
-                value={type}
+                value={query}
               ></input>
-              <button className="btn btn-outline-light" onClick={changeType}>
+              <button className="btn btn-outline-light" onClick={typeChangeHandle}>
               <i class="fas fa-search"></i>
               </button>
             </li>
@@ -80,10 +102,9 @@ export const Findpage = () => {
       </nav>
       <div className="container-fluid">
         <h4>Search Results</h4>
-        <div className=" content" >{card}</div>
+        <div className=" content" >{product == [] || product[0] == undefined ? "Enter The Search Query" : cards(product)}</div>
       </div>
     </div>
   );
 };
 export default Findpage;
-// row row-cols-1 row-cols-md-2 row-cols-lg-3 col mb-4
