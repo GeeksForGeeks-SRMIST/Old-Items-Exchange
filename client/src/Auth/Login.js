@@ -122,25 +122,6 @@ class Login extends Component {
             <img src={img} className='signupImg'/>
           </div>
         </div>
-        <footer  className="fixed-bottom">
-        <div className='row'>
-          <div className='col-sm-12 col-lg-5 about-us'>
-            <a href="">About Us</a>
-          </div>
-          <div className='col-sm-12 col-lg-1'>
-            <a href="">Developers</a>
-          </div>
-          <div className='col-sm-12 col-lg-1'>
-            <a href="">Contact Us</a>
-          </div>
-          <div className='col-sm-12 col-lg-3 brand'>
-            <a href=""><i className="fab fa-instagram fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;</a>
-            <a href=""><i className="fab fa-facebook-square fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;</a>
-            <a href=""><i className="fab fa-linkedin fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;</a>
-            <a href=""><i className="fab fa-youtube fa-lg"></i></a>
-          </div>
-        </div>
-      </footer>
       </div>
     );
   }
