@@ -2,15 +2,34 @@
   justify-content: center;
   padding: 2% 5% 3%;
 }
+html{
+  width: 100vw;
+}
+/* .home.navbar-brand{
+  margin-left: 2%;
+} */
+h1.recomendation{
+  font-family: "Copperplate", "Copperplate Gothic Light", fantasy;
+  font-style: normal; 
+  font-variant: normal; 
+  font-weight: 700; 
+  line-height: 26.4px; 
+  letter-spacing: 5px;
+  text-align: center;
+  margin: 5% 0;
+}
 body {
-  background-color: #bbe1fa;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  width: 100vw;
+  background-image: linear-gradient(to right top,#65dfc9, #6cdbeb);
+  /* background-color: #bbe1fa; */
+  /* font-family: Georgia, "Times New Roman", Times, serif; */
+  font-family: "Poppins", sans-serif;
   background-size: 100% 100%;
 
   color: #07689f;
 }
 #c0 {
-  font-family: "Indie Flower", cursive;
+  /* font-family: "Indie Flower", cursive; */
   font-size: 20px;
 }
 .rounded {
@@ -32,45 +51,89 @@ body {
   border-width: 2px;
   border-radius: 100%;
   z-index: 99;
-  background-color: #fff;
+  background-color: #C5F2F1;
+  /* background-color: #fff; */
+
+}
+ .cards a:hover{
+  text-decoration: none !important;
+}
+.content .cards .card:hover{
+  box-shadow: 0 0 20px rgb(13, 93, 104);
 }
 .seeMore {
   margin-top: 2%;
   text-align: center;
 }
-.seeMore button:hover {
-  color: #0785ce;
-}
 .desc {
   padding: 3.5%;
-  padding-left: 12%;
   position: relative;
   left: -10%;
   width: 77%;
-  border-radius: 2%;
   border-color: #07689f;
+  border-radius: 36px;
   border-width: 2px;
   z-index: 0;
-  border-radius: 36px;
+  text-align: center;
 }
-.card {
+.itemC.card {
   /* padding : 20px; */
   border-radius: 5%;
-  margin: 10px auto;
+  margin: 10px ;
   border-width: 0;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: 6px 6px 20px rgba(122,122,122,0.2);
+
 }
-.card-body {
+.itemC .card-body {
   color: #07689f !important;
+  background:linear-gradient(to right bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
 }
 nav a {
-  color: #bbb;
+  color: #9A9DA0;
 }
-nav a:hover {
+nav .nav-item a:hover {
   color: #eee;
-  font-size: 105%;
+  font-size: 102%;
   transition-duration: 0.15s;
   transition-timing-function: ease-in;
   text-decoration: none;
+}
+.searchBar{
+  background-color: rgba(255, 255, 255, 0);
+  border-width: 0;
+  border-radius: 0;
+  border-bottom-width:2px ;
+  border-color: #aaaaaa;
+  color: #fff;
+}
+.searchBar:focus{
+  background-color: rgba(255, 255, 255, 0);
+  outline:0; 
+  -webkit-appearance:none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  border-color: #fff;
+  caret-color: #fff;
+  color: #fff;
+}
+.searchBtnHome{
+  color: #aaaaaa;
+}
+.searchBtnHome:focus{
+  -webkit-appearance:none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+.searchBar::placeholder{
+  color: #dddddd;
+}
+.searchBtnHome:hover{
+  color: #fff;
 }
 .nav-item {
   margin: auto 10px;
@@ -116,11 +179,21 @@ p {
   margin: 1.5%;
   display: inline-block;
 }
+#c1 .card-img,
+#c2 .card-img,
+#c3 .card-img,
+#c4  .card-img{
+  height: 325px ;
+  opacity: 0.6;
+}
 .carousel-item > img {
   height: 45vh;
 }
 #c0 .col-lg-7 {
   padding: 2% 5%;
+}
+#c0 .carousel-control-next{
+  z-index: 0;
 }
 
 h1 {
@@ -220,7 +293,7 @@ h2 {
     margin: 2% auto;
   }
   .desc {
-    width: 77%;
+    width: 75%;
   }
 }
 @media (max-width: 400px) {
@@ -230,13 +303,27 @@ h2 {
   .desc {
     width: 75%;
   }
+  h1.recomendation{
+  font-size: 30px;
+  font-family: "Copperplate", "Copperplate Gothic Light", fantasy;
+  font-style: normal; 
+  font-variant: normal; 
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 5% 0;
+  }
+  .card{
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 }
 @media (max-width: 360px) {
   .card-img-top {
     height: 200px;
   }
   .desc {
-    width: 73%;
+    width: 68%;
     font-size: 95%;
   }
 }

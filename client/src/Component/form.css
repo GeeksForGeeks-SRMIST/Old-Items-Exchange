@@ -34,7 +34,7 @@ body{
 .itemDetailsFormFill{
   background: url("./img.jfif");
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
 }
 .itemDetailsFormFill .nav a:hover{
   font-size: 25px;
@@ -118,7 +118,7 @@ body{
     display: none;
   }
   .itemDetailsFormFill{
-    height: 100vh;
+    min-height: 100vh;
     padding-bottom: 10%;
   }
   body{
@@ -127,7 +127,7 @@ body{
 }
 @media (max-width: 360px){
   .itemDetailsFormFill{
-    height: 100vh;
+   min-height: 100vh;
     padding-bottom: 10%;
   }
 }

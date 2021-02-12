@@ -32,14 +32,18 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route exact path="/" component={Home}></Route>
-          <Route path="/login" component={Login}></Route>
+          <Route path="/login" exact component={Login}></Route>
+          <Route path="/search/:id" component={Findpage} />
+          <Route path="/search/" component={Findpage} />
           {localStorage.getItem("token") ? (
-            <Route path="/profile" component={ProfilePage}></Route>
+            <Route path="/profile" exact component={ProfilePage}></Route>
           ) : null}
-          <Route path="/signup" component={Signup}></Route>
-          <Route path="/search" exact component={Findpage} />
+          {localStorage.getItem("token") ? (
+            <Route path="/:id" exact component={Form}></Route>
+          ) : null}
+          <Route path="/signup" exact component={Signup}></Route>
           <Route path="/item/:id" component={ItemPage} />
-          <Route path="/:id" component={Form}></Route>
+
           {/* Route path="/fileupload" component={FileUpload}></Route> */}
         </Switch>
         {/*  {this.state.user ? <Signup /> : <Form></Form>} */}

@@ -17,7 +17,7 @@ const ItemSchema = mongoose.Schema({
   item_name: {
     type: String,
     required: true,
-    lowercase : true
+    lowercase : true,
   },
   price: {
     type: String,

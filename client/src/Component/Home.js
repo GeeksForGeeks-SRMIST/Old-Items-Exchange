@@ -1,17 +1,18 @@
 import React, { useEffect, useState, Fragment } from "react";
 import firebase from "firebase";
-
 import { Link } from "react-router-dom";
 import Select from "react-select";
 import Axios from "axios";
 import "./home.css";
-import logo from "./4272140.jpg";
-import logo1 from "./6796.jpg";
-import logo2 from "./15256.jpg";
+import "./footer.css";
+
+import logo from "./tac2.png";
+import logo1 from "./r4-removebg-preview.png";
+import logo2 from "./601ba887d04c6.png";
 export const Home = () => {
   const [product, updateProduct] = useState([]);
   const [type, updateType] = useState("");
-
+  const [query,setQuery] = useState("");
   const userItem = async () => {
     await Axios.get("/api/item/list")
       .then((res) => updateProduct(res.data.items))
@@ -45,7 +46,7 @@ export const Home = () => {
           .map((data) => (
             <div key={Math.random() * 1000} className=" cards ">
               <Link to={ `/item/${data._id}`}>
-                <div className="card rounded">
+                <div className="card rounded itemC">
                   <img
                     src={
                       data.images[0] ||
@@ -78,7 +79,7 @@ export const Home = () => {
       : (card = product.slice(0, 8).map((data) => (
           <div key={Math.random() * 1000} className=" cards">
             <Link to={`/item/${data._id}`}>
-              <div className="card rounded">
+              <div className="card rounded itemC">
                 <img
                   src={
                     data.images[0] ||
@@ -145,56 +146,69 @@ export const Home = () => {
     .filter((res) => res.category == "Furniture")
     .map((res) => (
       <div key={res._id} className="carousel-item">
-        <img
-          src={
-            res.images[0] ||
-            "https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
-          }
-          className="d-block w-100"
-          alt="..."
-        ></img>
+      
+        <div class="card bg-dark text-white">
+          <img class="card-img d-block w-100" 
+            src={
+              res.images[0] ||
+              "https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
+            }
+             alt="Card image" />
+          <div class="card-img-overlay">
+            <h5 class="card-title" style={{textTransform:"capitalize"}}>{res.item_name}</h5>
+          </div>
+        </div>
       </div>
     ));
   let automobile = product
     .filter((res) => res.category == "Automobile")
     .map((res) => (
       <div key={res._id} className="carousel-item">
-        <img
-          src={
-            res.images[0] ||
-            "https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
-          }
-          className="d-block w-100"
-          alt="..."
-        ></img>
+        <div class="card bg-dark text-white">
+          <img class="card-img d-block w-100" 
+            src={
+              res.images[0] ||
+              "https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
+            }
+             alt="Card image" />
+          <div class="card-img-overlay">
+            <h5 class="card-title" style={{textTransform:"capitalize"}}>{res.item_name}</h5>
+          </div>
+        </div>
       </div>
     ));
   let electronic_appliance = product
     .filter((res) => res.category == "Electronic Appliances")
     .map((res) => (
       <div key={res._id} className="carousel-item">
-        <img
-          src={
-            res.images[0] ||
-            "https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
-          }
-          className="d-block w-100"
-          alt="..."
-        ></img>
+        <div class="card bg-dark text-white">
+          <img class="card-img d-block w-100" 
+            src={
+              res.images[0] ||
+              "https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
+            }
+             alt="Card image" />
+          <div class="card-img-overlay">
+            <h5 class="card-title" style={{textTransform:"capitalize"}}>{res.item_name}</h5>
+          </div>
+        </div>
       </div>
     ));
   let gaming = product
     .filter((res) => res.category == "Gaming Equipment")
     .map((res) => (
       <div key={res._id} className="carousel-item">
-        <img
-          src={
-            res.images[0] ||
-            "https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
-          }
-          className="d-block w-100"
-          alt="..."
-        ></img>
+        <div class="card bg-dark text-white">
+          <img class="card-img d-block w-100" 
+            src={
+              res.images[0] ||
+              "https://i.ytimg.com/vi/2ue-nVWN6kI/maxresdefault.jpg"
+            }
+             alt="Card image" />
+          <div class="card-img-overlay">
+            <h5 class="card-title" style={{textTransform:"capitalize"}}>{res.item_name}</h5>
+          </div>
+        </div>
       </div>
     ));
   /* to authorise user using tokens */
@@ -212,13 +226,16 @@ export const Home = () => {
       </li>
     );
   }
+  const getQuery = (e) =>{
+    setQuery(e.target.value);
+  }
 
   /* main return function */
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a className="navbar-brand" href="#">
-          Navbar
+        <a className="navbar-brand home" href="#">
+          Stud-Shop
         </a>
         <button
           className="navbar-toggler"
@@ -233,10 +250,20 @@ export const Home = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <a href="/search">
-                <i className="fas fa-search "></i>
-              </a>
+            <li class="nav-item">
+              <input
+                type="text"
+                placeholder="Enter item"
+                className="form-control home searchBar"
+                aria-describedby="emailHelp"
+                onChange={getQuery}
+                style={{ width: "15rem", float: "left" }}
+              ></input>
+              <Link to={`/search/${query}`}>
+                <button className="btn searchBtnHome" to=''>
+                <i class="fas fa-search"></i>
+                </button>
+              </Link>
             </li>
             <li className="nav-item nav-component">
               <div className="component">{MyComponent()}</div>
@@ -261,21 +288,21 @@ export const Home = () => {
             <div className="carousel-item active">
               <div class="row">
                 <div class="col-md-7 col-lg-7">
-                  <img src={logo} />
+                  <img src={logo1} />
                 </div>
                 <div class="col-md-4 col-lg-4">
-                  <h3>The Jugaad of your belongings @SRM.done Right.24X7.</h3>
+                  <h3>The Jugaad of your belongings @SRM done Right.24X7.</h3>
                 </div>
               </div>
             </div>
             <div className="carousel-item ">
               <div class="row">
                 <div class="col-md-7 col-lg-7">
-                  <img src={logo1} />
+                  <img src={logo} />
                 </div>
                 <div class="col-md-4 col-lg-4">
                   <h3>
-                    Electronics.Vehicles.Games. Now #bechde with Potheri at your
+                    Electronics.Vehicles.Games. Now <strong>#bechde</strong> with Potheri at your
                     fingertips.
                   </h3>
                 </div>
@@ -323,17 +350,17 @@ export const Home = () => {
         {/*  */}
         <h1 className="recomendation">Recommended</h1>
         <div className=" content">{card}</div>
-        <h1>Categories</h1>
+        <h1 className="recomendation">Categories</h1>
         <div className="carousel-display">
           <div className="carousel-arrange">
             <div className="container">
               <div id="c1">
-                <h2 onClick="/">Furniture</h2>
+                <h2>Furniture</h2>
                 <div
                   id="carouselExampleControls1"
                   className="carousel slide"
                   data-ride="carousel"
-                  data-interval="4700"
+                  data-interval="5000"
                 >
                   <div className="carousel-inner">
                     <div className="carousel-item active">
@@ -350,10 +377,10 @@ export const Home = () => {
               <div id="c2">
                 <h2>Automobile</h2>
                 <div
-                  id="carouselExampleControls2"
+                  id="carouselExampleControls1"
                   className="carousel slide"
                   data-ride="carousel"
-                  data-interval="4800"
+                  data-interval="5000"
                 >
                   <div className="carousel-inner">
                     <div className="carousel-item active">
@@ -373,7 +400,7 @@ export const Home = () => {
                   id="carouselExampleControls3"
                   className="carousel slide"
                   data-ride="carousel"
-                  data-interval="4900"
+                  data-interval="5000"
                 >
                   <div className="carousel-inner">
                     <div className="carousel-item active">
@@ -411,6 +438,36 @@ export const Home = () => {
           </div>
         </div>
       </div>
+      <footer className="footer">
+          <div className="row">
+              <div class="contact col-lg-4">
+                <h4>Contact Us</h4>
+                <p class="one">Hi, we are always open for cooperation and suggestions,<br /> contact us in one of the ways below</p>
+                <div class="details row">
+                    <div className="col-sm-6">
+                        <p>Phone Number</p>
+                        <span>+1 (800)060-07-30</span>
+                    </div> 
+                    <div className="col-sm-6"> 
+                        <p>Email Address</p>
+                        <span>us@example.com</span>
+                    </div>
+                </div>  
+              </div>
+              <div class="account col-lg-4"> 
+                <h4>GFG</h4>
+                <p><a href="#">About us</a></p>
+                <p><a href="#">Affiliate</a></p>
+                <p><a href="#">Help</a></p>
+              </div>
+              <div class="newsletter col-lg-4">  
+                <div class="social-btns">
+                  <a class="btn insta" href="https://instagram.com/gfg_srmist?igshid=m50lvnk13zob" target="_blank"><i class="fab fa-instagram fa"></i></a>
+                  <a class="btn linkedin" href="/https://www.linkedin.com/company/gfg-srm" target="_blank"><i class="fa fa-linkedin"></i></a>
+                </div>
+            </div>
+          </div>
+        </footer>
     </div>
   );
 };
