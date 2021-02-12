@@ -1,0 +1,79 @@
+.itemPage .itemPUser{
+    font-size: 100px;
+}
+.itemPage .card-body{
+    padding:2% 4%;
+}
+.itemPage .col-lg-5 .card-body{
+    padding:4%;
+    background:linear-gradient(to right bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+.itemPage .col-lg-7 .card-body{
+    background:linear-gradient(to right bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+.itemPage .col-lg-7 .card-header{
+    background:linear-gradient(to right bottom, rgba(255, 255, 255, 0.397), rgba(255, 255, 255, 0));
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+.itemPage .col-lg-5 .card,.itemPage .col-lg-7 .card{
+    background-color: transparent;
+}
+.itemPage .col-lg-5,.itemPage .col-lg-7{
+    padding:5% 3% !important;
+}
+.itemPage .col-lg-5 .card-img-top{
+    border-radius: 16px;
+    height: auto !important;
+}
+.itemPage .col-lg-5 .card{
+    text-align: center;
+    border-radius: 16px;
+}
+.itemPage .col-lg-7 .card{
+    border-radius: 16px;
+}
+.itemPage .recomendation{
+    margin:1%;
+}
+.itemPage .description{
+    padding:3%;
+    font-size: 125%;
+}
+@media (max-width:800px){   
+    .itemPage .col-lg-5,.itemPage .col-lg-7{
+        width: 90vw;
+        margin: 2% auto;
+    }
+    .itemPage .description{
+        text-align: center;
+        padding:5%;
+    }
+}
+@media (max-width:600px){
+    .itemPage .col-lg-5 .card-img-top {
+        height: 250px !important;
+    }
+    .itemPage .col-lg-5,.itemPage .col-lg-7{
+        width: 100vw;
+        margin: 2% auto;
+    }
+    .itemPage .description{
+        text-align: center;
+    }
+    .itemPage .col-lg-7 .card .card-body > .row{
+        margin: 8% auto;
+    }
+    .itemPage .col-lg-7 .card .card-body > .row > .col-sm-1{
+        width: 10%;
+        padding:0;
+    }
+    .itemPage .col-lg-7 .card .card-body > .row > .col-sm-10{
+        width: 90%;
+        padding:0;
+    }
+}

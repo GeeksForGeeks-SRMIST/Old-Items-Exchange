@@ -4,27 +4,36 @@ import { Link } from "react-router-dom";
 
 import "./findPage.css";
 
-export const Findpage = () => {
+export const Findpage = (match) => {
+  window.onpopstate = e => {
+    window.location.reload();
+ }
+  console.log(match);
   const [product, updateProduct] = useState([]);
   const [type, updateType] = useState("");
   const [query,setQuery] = useState("");
   const userItem = async () => {
-    if(type!=''){
-      await Axios.get(`/api/item/list/${type}`)
+    if(match.match.params.id!=''){
+      await Axios.get(`/api/item/list/${match.match.params.id}`)
       .then((res) => {
         console.log(res.data.items);
         updateProduct(res.data.items);
       })
       .catch((err) => console.log(err));
+    }else{
+      updateProduct([]);
     }
   };
+  function refreshPage() {
+    window.location.reload(false);
+  }
   let card;
   function cards(product){
     return(
       product.map((data,index) => (
         <div key={Math.random() * 1000} className=" cards ">
               <Link to={`/item/${data._id}`}>
-                <div className="card" id={index}>
+                <div className="card itemC" id={index}>
                   <img
                     src={
                       data.images[0] ||
@@ -54,24 +63,25 @@ export const Findpage = () => {
             </div>
     )))
   };
-
+  var content = "";
   const getQuery = (e) =>{
     setQuery(e.target.value);
   }
-  const typeChangeHandle = () => {
-    updateType(query);
-    
+  function change(){
     setQuery('');
-  };
+    updateType(query);
+  }
   useEffect((e) => {
+    console.log('run');
     userItem();
-  }, [type]);
+    console.log(product);
+  },[type]);
 
   return (
-    <div>
+    <div className="findPageMainDiv">
       
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="/">Stud-Shop</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -87,9 +97,11 @@ export const Findpage = () => {
                 style={{ width: "15rem", float: "left" }}
                 value={query}
               ></input>
-              <button className="btn btn-outline-light" onClick={typeChangeHandle}>
-              <i class="fas fa-search"></i>
-              </button>
+              <Link to={`/search/${query}`}>
+                <button className="btn searchBtnHome" onClick={change}>
+                <i class="fas fa-search"></i>
+                </button>
+              </Link>
             </li>
             <li className="nav-item"> 
               <a href="/"><i className="fas fa-home"></i></a>
@@ -100,10 +112,40 @@ export const Findpage = () => {
           </ul>
         </div>
       </nav>
-      <div className="container-fluid">
+      <div className="container-fluid searchPage">
         <h4>Search Results</h4>
-        <div className=" content" >{product == [] || product[0] == undefined ? "Enter The Search Query" : cards(product)}</div>
+        <div className=" content" >{product == [] || product[0] == undefined ? "No Item Found by that Name" : cards(product)}</div>
       </div>
+      <footer className="footer">
+          <div className="row">
+              <div class="contact col-lg-4">
+                <h4>Contact Us</h4>
+                <p class="one">Hi, we are always open for cooperation and suggestions,<br /> contact us in one of the ways below</p>
+                <div class="details row">
+                    <div className="col-sm-6">
+                        <p>Phone Number</p>
+                        <span>+1 (800)060-07-30</span>
+                    </div> 
+                    <div className="col-sm-6"> 
+                        <p>Email Address</p>
+                        <span>us@example.com</span>
+                    </div>
+                </div>  
+              </div>
+              <div class="account col-lg-4"> 
+                <h4>GFG</h4>
+                <p><a href="#">About us</a></p>
+                <p><a href="#">Affiliate</a></p>
+                <p><a href="#">Help</a></p>
+              </div>
+              <div class="newsletter col-lg-4">  
+                <div class="social-btns">
+                  <a class="btn insta" href="https://instagram.com/gfg_srmist?igshid=m50lvnk13zob" target="_blank"><i class="fab fa-instagram fa"></i></a>
+                  <a class="btn linkedin" href="/https://www.linkedin.com/company/gfg-srm" target="_blank"><i class="fa fa-linkedin"></i></a>
+                </div>
+            </div>
+          </div>
+        </footer>
     </div>
   );
 };

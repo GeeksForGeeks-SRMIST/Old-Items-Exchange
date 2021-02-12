@@ -2,8 +2,18 @@ body{
   width: 100vw;
   overflow-x: hidden;
 }
+.userProfile{
+  min-height: 100vh;
+}
 .userProfile .nav-item:last-child{
   margin-right: 20px;
+}
+.userProfile .card{
+  border-radius: 16px;
+  border-bottom-width:0;
+}
+.userProfile .profilePrList .card:hover{
+  box-shadow: 0 0 20px rgb(13, 93, 104);
 }
 .userContent .Link{
   color: #fff;
@@ -15,10 +25,6 @@ body{
 .userContent .Details{
   text-transform: capitalize;
   text-align: center;
-}
-.userContent .btn{
-  border-top-left-radius: 0% !important;
-  border-top-right-radius: 0% !important;
 }
 .userDetails .col-lg-1{
   text-align: center;
@@ -57,7 +63,7 @@ body{
 .userContent .btn{
   border-top-left-radius: 0% !important;
   border-top-right-radius: 0% !important; 
-  border-radius: 16px ;
+  border-radius: 14px ;
 }
 .userContent .rounded{
   border-radius: 16px !important;
@@ -65,6 +71,17 @@ body{
 .userContent .location{
   font-size: 115%;
   margin-top: 5%;
+}
+.userContent .prCard{
+  border-radius: 5%;
+  margin: 10px ;
+  border-width: 0;
+  background-color: rgba(255, 255, 255, 0);
+  box-shadow: 6px 6px 20px rgba(122,122,122,0.2);
+}
+.userContent .prCard .card-body{
+  color: #07689f !important;
+  background:linear-gradient(to right bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
 }
 i{
   font-size: 120%;
@@ -84,9 +101,6 @@ i.fa-home{
   }
 }
 @media(max-width:800px){
-  .userContent .prCard .card-body{
-    background-color: #fff;
-  }
   .userContent .prCard img{
     height: 250px;
   }

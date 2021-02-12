@@ -40,7 +40,11 @@ class Login extends Component {
       .then((res) =>
         this.setState({ valid: res.data.token, userId: res.data.userId })
       )
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        alert("Wrong Credentials Entered");
+        window.location.reload();
+        console.log(err);
+      });
 
     console.log(localStorage.getItem("token"));
   };
@@ -58,30 +62,27 @@ class Login extends Component {
       localStorage.setItem("token", this.state.valid);
       localStorage.setItem("userId", this.state.userId);
     }
-    if (this.state.valid) return <Redirect to="/"></Redirect>;
+    if (this.state.valid){
+       return <Redirect to="/"></Redirect>; 
+    }
     return (
       <div className="image1">
-        <div>
-          <ul className="nav bg-dark justify-content-center">
-            <li className="nav-item">
-              {/* <img
-                      src={
-                      style={{ justifyContent: "right" }}
-                      className="image"
-                    ></img> */}
-            </li>
-            <li className="nav-item">
-              <Link to="/" className="nav-link active">
-              <i className="fas fa-home"></i>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/signup" className="nav-link active">
-                Signup
-              </Link>
-            </li>
-          </ul>
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="/">Stud-Shop</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li className="nav-item"> 
+                <a href="/"><i className="fas fa-home"></i></a>
+              </li>
+              <li className="nav-item"> 
+                <a href="/signup">Sign Up</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
         <img src={img} className='mobSignup'/>
         <div className="row">
           <div className="desk col-lg-3 login bg-white rounded">

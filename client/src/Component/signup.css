@@ -5,7 +5,6 @@
 .nav-link {
   font-size: 25px;
   padding-bottom: 45px;
-
   color: rgb(90, 89, 89);
 }
 .signup .nav a:hover{
@@ -34,6 +33,10 @@ p {
   padding:1% 2%;
   font-size: 90%;
 }
+.signup .card{
+  border-width:0 ;
+  padding-top: 5%;
+}
 .signup img{
   /* margin:0% auto; */
   width: 36vw;
@@ -52,13 +55,22 @@ p {
 }
 .signup input{
   display: inline-block;
-  margin: 3% 0;
+  margin: 3% 0 2%;
   width: 90%;
   border-width:0px;
   border-bottom-width: 1px;
   border-radius: 0;
   border-bottom-color:  rgb(119, 2, 168);
   color: rgb(119, 2, 168);
+}
+.signup input:focus{
+  outline:0; 
+  border-bottom-width: 2px;
+  border-bottom-color:  rgb(119, 2, 168);
+  -webkit-appearance:none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
 }
 .signup .btn{
   margin : 1% 31%;

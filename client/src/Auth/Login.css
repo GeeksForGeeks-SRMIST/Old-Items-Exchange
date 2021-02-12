@@ -58,6 +58,13 @@ p {
 }
 .image1 input:focus{
   color: rgb(119, 2, 168);
+  border-bottom-color:  rgb(119, 2, 168);
+  border-bottom-width: 2px;
+  outline:0; 
+  -webkit-appearance:none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
 }
 .form-group h3{
   text-align: center;
@@ -176,6 +183,9 @@ p {
   .image1 .col-lg-3 .btn {
     width: 60%;
     margin: 8% 20%;
+  }
+  .image1 .col-lg-3{
+    padding:5% 2% 1%;
   }
 }
 @media (max-width:380px){

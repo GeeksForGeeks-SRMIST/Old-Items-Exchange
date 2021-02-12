@@ -42,9 +42,9 @@ router.post(
     try {
       let item = await Item.findOne({ item_name });
 
-      if (item) {
-        return res.status(200).json({ msg: "Item already exists" });
-      }
+      // if (item) {
+      //   return res.status(200).json({ msg: "Item already exists" });
+      // }
 
       const author = await User.findById(req.user.id).select("-password");
 
