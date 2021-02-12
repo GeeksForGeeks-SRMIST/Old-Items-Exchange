@@ -28,7 +28,7 @@
 }
 .itemPage .col-lg-5 .card-img-top{
     border-radius: 16px;
-    height: auto !important;
+    height: 300px !important;
 }
 .itemPage .col-lg-5 .card{
     text-align: center;
@@ -52,6 +52,9 @@
     .itemPage .description{
         text-align: center;
         padding:5%;
+    }
+    .itemPage .col-lg-5 .card-img-top {
+        height: 250px !important;
     }
 }
 @media (max-width:600px){
