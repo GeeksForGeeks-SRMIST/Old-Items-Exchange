@@ -233,21 +233,13 @@ on to a div component
               <div class="contact col-lg-4">
                 <h4>Contact Us</h4>
                 <p class="one">Hi, we are always open for cooperation and suggestions,<br /> contact us in one of the ways below</p>
-                <div class="details row">
-                    <div className="col-sm-6">
-                        <p>Phone Number</p>
-                        <span>+1 (800)060-07-30</span>
-                    </div> 
-                    <div className="col-sm-6"> 
-                        <p>Email Address</p>
-                        <span>us@example.com</span>
-                    </div>
+                <div class="text-center">
+                  gfg.srmist@gmail.com   
                 </div>  
               </div>
               <div class="account col-lg-4"> 
                 <h4>GFG</h4>
                 <p><a href="#">About us</a></p>
-                <p><a href="#">Affiliate</a></p>
                 <p><a href="#">Help</a></p>
               </div>
               <div class="newsletter col-lg-4">  
