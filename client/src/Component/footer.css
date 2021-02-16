@@ -49,7 +49,9 @@
   .footer .account p{
     margin-bottom: 8px;
   }
-
+  .footer .contact > div:hover{
+    color: #fff;
+  }
   .footer > .row{
       width: 100vw;
   }
