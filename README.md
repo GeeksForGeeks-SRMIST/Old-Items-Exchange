@@ -3,6 +3,9 @@
 ## 🔗 Links
 - [Student Shop](https://olxforsrm.herokuapp.com/)
 
+## 💥 Inspiration
+> 
+
 ## 💻 samples:
 <img src="https://github.com/GeeksForGeeks-SRMIST/Old-Items-Exchange/blob/master/mockups/1.jpeg" />
 <img src="https://github.com/GeeksForGeeks-SRMIST/Old-Items-Exchange/blob/master/mockups/2.jpeg" />
