@@ -4,9 +4,12 @@
 - [Student Shop](https://olxforsrm.herokuapp.com/)
 
 ## 💻 samples:
-
-
-
+<img src="https://github.com/GeeksForGeeks-SRMIST/Old-Items-Exchange/blob/master/mockups/1.jpeg" />
+<img src="https://github.com/GeeksForGeeks-SRMIST/Old-Items-Exchange/blob/master/mockups/2.jpeg" />
+<img src="https://github.com/GeeksForGeeks-SRMIST/Old-Items-Exchange/blob/master/mockups/3.jpeg" />
+<img src="https://github.com/GeeksForGeeks-SRMIST/Old-Items-Exchange/blob/master/mockups/4.jpeg" />
+<img src="https://github.com/GeeksForGeeks-SRMIST/Old-Items-Exchange/blob/master/mockups/5.jpeg" />
+<img src="https://github.com/GeeksForGeeks-SRMIST/Old-Items-Exchange/blob/master/mockups/6.jpeg" />
 
 
 ## 👣 steps to run the project
