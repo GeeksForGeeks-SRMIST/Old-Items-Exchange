@@ -4,7 +4,9 @@
 - [Student Shop](https://olxforsrm.herokuapp.com/)
 
 ## 💥 Inspiration
-> 
+> We have got the inspiration to make this project from the fact that whenever the senior students vacate their flat or PG rooms they sell all their stuff to
+the local shop keepers who in turn sell these stuff to the other students at a higher price so our project aims to
+eliminate these middle men and so that students can get stuff at a fair price 
 
 ## 💻 samples:
 <img src="https://github.com/GeeksForGeeks-SRMIST/Old-Items-Exchange/blob/master/mockups/1.jpeg" />
