@@ -7,7 +7,8 @@
 > 
 GeeksforGeeksSRMIST has always striven to bring out the geek in all of us, the best way possible.
 
-And what better than using our skills to give our fellow peers one stop destination,to buy and sell their trash that can be someone's treasure, at affordable prices!## 💻 samples:
+And what better than using our skills to give our fellow peers one stop destination,to buy and sell their trash that can be someone's treasure, at affordable prices!
+## 💻 samples:
 <img src="https://github.com/GeeksForGeeks-SRMIST/Old-Items-Exchange/blob/master/mockups/1.jpeg" />
 <img src="https://github.com/GeeksForGeeks-SRMIST/Old-Items-Exchange/blob/master/mockups/2.jpeg" />
 <img src="https://github.com/GeeksForGeeks-SRMIST/Old-Items-Exchange/blob/master/mockups/3.jpeg" />
