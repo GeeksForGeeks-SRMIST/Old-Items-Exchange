@@ -58,6 +58,9 @@
     }
 }
 @media (max-width:600px){
+    .itemPage{
+        overflow-x:hidden;
+    }
     .itemPage .col-lg-5 .card-img-top {
         height: 250px !important;
     }
