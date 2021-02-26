@@ -28,7 +28,7 @@ And what better than using our skills to give our fellow peers one stop destinat
 - Reactjs
 
 ## 👨‍🎓Mentors
-- This project was a part of GFG-SRM chapter, which was mentored by DEV ARYAN SRIVASTAVA,DHARINI GROVER,RISHABH ABHANI 
+- This project was a part of GFG-SRM chapter, which was mentored by DEV ARYAN SHRIVASTAVA,DHARINI GROVER,RISHABH ABHANI 
 
 ## made with 💕 by:
 - [Raghav Khatoria](https://github.com/raghav13901)
