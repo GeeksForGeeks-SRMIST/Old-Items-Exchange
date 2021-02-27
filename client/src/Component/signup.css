@@ -161,7 +161,7 @@ p {
 @media (max-width:430px){
   .signup img{
     width:80vw;
-    margin:1vh 10vw 28vh;
+    margin:5vh 10vw 28vh;
   }
 }
 @media (max-width:380px){
