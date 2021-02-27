@@ -294,6 +294,7 @@ h2 {
   }
   .desc {
     width: 75%;
+    padding-left:8%;
   }
 }
 @media (max-width: 400px) {
